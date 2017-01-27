@@ -1,0 +1,18 @@
+@media screen and (max-width: 770px) {
+.menu{
+    width: 50%;
+    }
+    .bt{
+        margin-left: 0px;
+    }
+    .Cbusca{
+        height: 550px;
+    }
+
+}
+@media screen and (max-width: 455px) {
+.menu{
+    width: 100%;
+    }
+
+}
