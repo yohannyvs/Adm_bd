@@ -165,7 +165,7 @@
 
 /*ofertas*/
 #of{
-    width: 220px;
+    width: 320px;
     border-bottom: 2px solid  #162541;
     border-top: 2px solid  #162541;
     margin-top: 3%;
@@ -173,6 +173,7 @@
 }
 #of h1{
     text-transform: uppercase;
+    text-align: center;
      font-family: 'Pathway Gothic One', sans-serif;
     
 }
@@ -302,4 +303,81 @@
 }
 .pie ul li a:hover{
     color:  #ff4157;
+}
+
+
+
+
+
+/*Pagina de Busqueda*/
+
+
+
+.filtro{
+    width: 100%;
+    background-color: lightgray;
+    margin-left:  -4.5%;
+    padding-top: 55px;
+    position: relative;
+    color: black;
+     font-family: 'Old Standard TT', serif;
+    text-transform: uppercase;
+    text-align: left;
+    
+}
+.filtro h1{
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.filtro ul{
+    margin: 0;
+    width: 100%;
+    list-style: none;
+      
+    
+}
+.filtro ul li{
+    width: 100%;
+    padding-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid white;
+    color: white;
+     margin-left:  -4.5%;
+}
+.filtro ul li span{
+    color: red !important;
+}
+
+.hoteles{
+    width: 100%;
+    padding-top: 55px;
+    position: relative;
+}
+.hotel{
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    height: 250px;
+    margin-top: 5%;
+   
+}
+.Himg{
+    width: 100%;
+    padding-top: 15%;
+    position: relative;
+}
+.Himg img{
+width: 100%; 
+height: 180px;
+    
+
+}
+.Hcaract{
+    width: 100%;
+    position: relative;
+    margin-top: 10%;
+ 
 }
