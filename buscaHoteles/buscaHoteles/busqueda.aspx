@@ -149,25 +149,62 @@
                         </div>
               </div>
                   </li>
+                  <li>
+                  <input type="button" id="buscar"  value="Filtrar">
+                  </li>
               </ul>
               </div>
           </div>
           <div class="col-xs-10 col-sm-10 col-md-10 ">
               <div class="hoteles">
          <div class="hotel">
-                  
+             <div class="row">
               <div class="col-xs-4 col-sm-4 col-md-4">
                  <div class="Himg"><img src="images/1.jpg"> </div>
                  </div>
               <div class="col-xs-6 col-sm-6 col-md-6">    
               <div class="Hcaract">
-              <div class="Htit">Cala Luna Hotel</div>
-              <div class="Hsubt">Playa Langosta, Tamarindo, Guanacaste, Costa Rica, 0800-012-1776</div>      
-              <div class="tipPago"></div>
-                <div class="btnseleccionar">Seleccionar</div>  
+              <div class="Htit"><a href="#"><h3>Cala Luna Hotel</h3></a></div>
+              <div class="Hsubt"><span class="icon-location"></span><h5>Playa Langosta, Tamarindo, Guanacaste, Costa Rica, 0800-012-1776</h5></div> 
+              <div class="Hpre">¢ 93.309 <br/><p>precio por noche</p></div>
+              <div class="tipPago"><span class="icon-checkmark"></span> spagar ahora o en el hotel</div>
+                <div class="btnseleccionar"> <input type="button" value="Seleccionar"> </div>  
                   </div>
-                  </div>  
+                  </div> 
+             </div>
+              <div class="row">
+              <div class="col-xs-4 col-sm-4 col-md-4">
+                 <div class="Himg"><img src="images/1.jpg"> </div>
+                 </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">    
+              <div class="Hcaract">
+              <div class="Htit"><a href="#"><h3>Cala Luna Hotel</h3></a></div>
+              <div class="Hsubt"><span class="icon-location"></span><h5>Playa Langosta, Tamarindo, Guanacaste, Costa Rica, 0800-012-1776</h5></div> 
+              <div class="Hpre">¢ 93.309 <br/><p>precio por noche</p></div>
+              <div class="Hadisp">Quedan 4 disponibles</div>
+              <div class="tipPago"><span class="icon-checkmark"></span> spagar ahora o en el hotel</div>
+                <div class="btnseleccionar"> <input type="button" value="Seleccionar"> </div>  
+                  </div>
+                  </div> 
+             </div>
+             
+              <div class="row">
+              <div class="col-xs-4 col-sm-4 col-md-4">
+                 <div class="Himg"><img src="images/1.jpg"> </div>
+                 </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">    
+              <div class="Hcaract">
+              <div class="Htit"><a href="#"><h3>Cala Luna Hotel</h3></a></div>
+              <div class="Hsubt"><span class="icon-location"></span><h5>Playa Langosta, Tamarindo, Guanacaste, Costa Rica, 0800-012-1776</h5></div> 
+              <div class="Hpre">¢ 93.309 <br/><p>precio por noche</p></div>
+              <div class="tipPago"><span class="icon-checkmark"></span> spagar ahora o en el hotel</div>
+                <div class="btnseleccionar"> <input type="button" value="Seleccionar"> </div>  
+                  </div>
+                  </div> 
+             </div>
               </div>
+            
+                  
              
           
           
@@ -192,8 +229,9 @@
           </div>
       
 </div>
- 
-    <!-- Librería jQuery requerida por los plugins de JavaScript -->
+    </form>
+
+      <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/functions.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -201,7 +239,5 @@
          incluir archivos JavaScript individuales de los únicos
          plugins que utilices) -->
     <script src="js/bootstrap.min.js"></script>
-      
-    </form>
 </body>
 </html>

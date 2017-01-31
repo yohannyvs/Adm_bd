@@ -33,3 +33,9 @@ $( function() {
 $( function() {
     $( "#datepicker2" ).datepicker();
   } );
+
+$(document).ready(function(){ 
+   $('#btnmb').on('click',function(){
+      $('#hbus').toggle("slide");
+   });
+});
