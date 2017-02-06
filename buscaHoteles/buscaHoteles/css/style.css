@@ -29,7 +29,10 @@
    
     position: relative;
 }
-
+.cuadroLogin{
+    width: 40%;
+    height: 180px;
+}
 .btn-menu{
     color: #ff4157;
     font-size: 30px;
@@ -456,12 +459,13 @@ border-radius: 5px;
 }
 .hdata{
     width: 100%;
-    height: 20px;
+    height: 40px;
     margin-top: 4px;
     margin-bottom: 4px;
     border: 1px solid gray;
     position: relative;
     border-radius: 2px;
+    padding-top: 15px;
     
     
 }
@@ -469,11 +473,13 @@ border-radius: 5px;
     display: inline;
     font-size: 10px;
     left: 0;
+    
 }
 .hdata h5{
     display: inline;
     font-size: 10px;
     font-weight: bold;
+     
 }
 .hdata a{
     width: 100%;
@@ -506,6 +512,241 @@ border-radius: 5px;
 .infoHotel{
     width: 100%;
     position: relative;
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.43);
+    height:55pc;
+    margin-top: 40px;
+}
+#hbus{
+    z-index: 99;
+    background-color: white;
+}
+.infoEncabezado{
+    width: 100%;
+   position: relative;
+}
+.infoEncabezado ul{
+    
+    position: relative;
+}
+.infoEncabezado ul li{
+    list-style: none;
+    display: inline;
+  
+    
+}
+.infoEncabezado ul li h1{
+    font-weight: bold;
+    
+}
+#iconoLuna{
+   
+    position: relative;
+  margin-top: 2%;
+    
+}
+#iconoLuna span{
+    position: relative;
+   font-size: 65px;
+    color: rgb(215, 77, 77);;
+    padding: 10px;
+    font-weight: bold;
+}
+.estrellas{
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+.hotelimg{
+    width: 100%;
+    position: relative;
+}
+.hotelimg img{
+    width: 100%;
+}
+.hotelofer{
+    position: relative;
+    width: 100%;
+    border: 0.5px solid  lightgray;
+    height: 21s0px;
+   
+    border-radius: 1px;
+    
+}
+#hoteloferHead{
+    width: 100;
+    height: 50px;
+    background-color: red;
+    color: white;
+    line-height: 50px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hotelofer ul{
+    width: 100%;
+    position: relative;
+    padding-top: 15px;
+}
+.hotelofer ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: right;
+    padding-right: 35px;
+}
+.hotelofer ul li input{
+    background-color: dodgerblue;
+    color: white;
+    height: 30px;
+    width: 150px;
+}
+
+.preA{
+    text-decoration:  line-through;
+    color: darkgrey;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 15px;
+}
+.preOF{
+     font-size: 20px;
+    font-weight: bold;
+}
+.hotelServ{
+  width: 100%;
+position: relative;
+    margin-top: 4%;
+}
+.Hservicios{
+    width: 100%;
+    position: relative;
+}
+.Hservicios span{
+    position: relative;
+    font-size: 18px;
+    display: inline;
+    padding-right: 10px;
+}
+.Hservicios h4{
+    font-weight: bold;
+    font-size: 18px;
+    display: inline;
+}
+.Hservicios ul{
+    position: relative;
+    width: 100%;
+    
+}
+.Hservicios ul li{
+    position: relative;
+    width: 100%;
+    font-size: 15px;
+    list-style: none;
+    display: block;
+    padding-bottom:15px;
+    
+}
+.Hservicios ul li span{
+    padding-right: 15px;
+    color: forestgreen;
+    font-size: 18px;
+}
+
+.Hatraccion{
+    width: 100%;
+    position: relative;
+}
+
+.Hatraccion span{
+    position: relative;
+    font-size: 18px;
+    display: inline;
+    padding-right: 10px;
+}
+.Hatraccion h4{
+    font-weight: bold;
+    font-size: 18px;
+    display: inline;
+}
+.Hatraccion ul{
+    position: relative;
+    width: 100%;
+    
+}
+.Hatraccion ul li{
+    position: relative;
+    width: 100%;
+    font-size: 15px;
+    list-style: none;
+    display: block;
+    padding-bottom:15px;
+    
+}
+.Hatraccion ul li span{
+    padding-right: 15px;
+    color: forestgreen;
+    font-size: 18px;
+}
+
+.Hmapa{
+    width: 100%;
     height: 250px;
+    margin-top: 5%;
+    padding-bottom: 3%;
+}
+.hotelHabitaciones{
+    position: relative;
+    width: 100%;
+}
+.hotelHabitaciones h1{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.contHabit{
+    width: 100%;
+    position: relative;
+}
+
+.tbimg img{
+   width: 350px;
+    height: 150px;
+    position: relative;     
+}
+.contHabit span{
+    display: inline;
+    position: relative;
+    margin-top:35px;
+    
+    
+}
+#hprec{
+    color: gray;
+    font-size: 20px;
+}
+#tipohabi{
+    color: forestgreen;
+    font-size: 18px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+#reservar{
+    background-color: deepskyblue;
+    color: white;
+    font-size: 18px;
+    width: 180px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 25px;
+     transition: 1s ease all;
+    
+}
+#reservar:hover{
+    color: deepskyblue;
+    background-color: azure;
+    transition: 1s ease all;
 }

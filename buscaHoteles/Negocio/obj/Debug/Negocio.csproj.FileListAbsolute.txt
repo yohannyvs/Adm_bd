@@ -12,3 +12,10 @@ C:\Users\Personal\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\bin\Debug\AccesoD
 C:\Users\Personal\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\Personal\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\obj\Debug\Negocio.dll
 C:\Users\Personal\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\obj\Debug\Negocio.pdb
+C:\Users\ppce-\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\bin\Debug\Negocio.dll
+C:\Users\ppce-\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\bin\Debug\Negocio.pdb
+C:\Users\ppce-\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\bin\Debug\AccesoDatos.dll
+C:\Users\ppce-\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\bin\Debug\AccesoDatos.pdb
+C:\Users\ppce-\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\ppce-\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\obj\Debug\Negocio.dll
+C:\Users\ppce-\Documents\GitHub\Adm_bd\buscaHoteles\Negocio\obj\Debug\Negocio.pdb

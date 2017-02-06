@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
-  <head runat="server">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,13 +55,65 @@
               <li id="hm"><a href="#"><span class="icon-home"></span> Home</a></li>
               <li id="sn"><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li id="gl"><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-              <li  id="pr"><a href="#"><span class="icon-user"></span> Iniciar Sesion o Crear Cuenta</a></li>       
+                  <li  id="pr"><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion o Crear Cuenta</a></li>
               </ul>
                </div>
                </div>
            
+              <div class="container">
+  
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+         <div class="container">
+            <div class="cuadroLogin ">
+             
+            
+              <div class="form-group">
+                  <label for="usr"><span class="icon-user"></span>User</label>
+                  <input type="text" class="form-control" placeholder="User">
+                </div>
+                <div class="form-group">
+                  <label for="usr"><span class="icon-keyboard"></span>Pass</label>
+                  <input type="password" class="form-control" placeholder="Pass">
+                </div>
+                
+                 <input type="button" value="login">
+              </div>
+             
+             </div>
+            
+            </div>
+            
+            
+            
+            
+            
+        </div>
+     
+      </div>
+      
+    </div>
+  </div>
+      
+  
+</div>
           
-          </div>
+          
+          
+          
+       
          
       
       <div class="row">
@@ -265,13 +317,13 @@
               <li><a href="#"><span class="icon-home"></span> Home</a></li>
               <li><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-              <li ><a href="#"><span class="icon-user"></span> Iniciar Sesion o Crear Cuenta</a></li>       
+              <li ><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion o Crear Cuenta</a></li>       
               </ul>
                   </center>
               </div>
           </div>
       
-</div>
+      </div>
  
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
