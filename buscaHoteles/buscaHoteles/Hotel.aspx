@@ -56,7 +56,7 @@
               <li id="hm"><a href="#"><span class="icon-home"></span> Home</a></li>
               <li id="sn"><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li id="gl"><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-              <li  id="pr"><a href="#"><span class="icon-user"></span> Iniciar Sesion o Crear Cuenta</a></li>       
+              <li  id="pr"><a href="#"><span class="icon-user"></span> Iniciar Sesion</a></li>       
               </ul>
                </div>
                </div>

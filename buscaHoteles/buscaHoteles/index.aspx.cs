@@ -13,5 +13,18 @@ namespace buscaHoteles
         {
 
         }
+
+        protected void btncheck_Click(object sender, EventArgs e)
+        {
+            String hotel, fechain, fechasal, adul, nin;
+            hotel = htl.Value;
+            fechain = datepicker.Value;
+            fechasal = datepicker2.Value;
+            adul = SelectAdul.Value;
+            nin = SelectNi.Value;
+
+
+            Response.Redirect("busqueda.aspx?ht="+hotel+"&fi="+fechain+"&fs="+fechasal+"&ad="+adul+"&ni="+nin);
+        }
     }
 }

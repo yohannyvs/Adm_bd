@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+  <head runat="server">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,6 +24,7 @@
     <![endif]-->
   </head>
   <body>
+      <form runat="server">
       <div class="container-fluid">
           <div class="row">
           <div class="social">
@@ -55,7 +56,7 @@
               <li id="hm"><a href="#"><span class="icon-home"></span> Home</a></li>
               <li id="sn"><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li id="gl"><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-                  <li  id="pr"><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion o Crear Cuenta</a></li>
+              <li  id="pr"><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion </a></li>
               </ul>
                </div>
                </div>
@@ -82,14 +83,14 @@
             
               <div class="form-group">
                   <label for="usr"><span class="icon-user"></span>User</label>
-                  <input type="text" class="form-control" placeholder="User">
+                  <input type="text" class="form-control" placeholder="User" id="LUsuario" runat="server">
                 </div>
                 <div class="form-group">
                   <label for="usr"><span class="icon-keyboard"></span>Pass</label>
-                  <input type="password" class="form-control" placeholder="Pass">
+                  <input type="password" class="form-control" placeholder="Pass" id="Lpassword" runat="server">
                 </div>
                 
-                 <input type="button" value="login">
+                 <input type="button" value="login"> o <a href="registro.aspx">Registrarse</a>
               </div>
              
              </div>
@@ -134,25 +135,25 @@
               <div class=" col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <label for="usr">Destino</label>
-                  <input type="text" class="form-control" placeholder="Destino, hotel, lugar de interés o dirección" id="htl">
+                  <input type="text" class="form-control" placeholder="Destino, hotel, lugar de interés o dirección" id="htl" runat="server">
               </div>
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-4">
               <div class="form-group">
                   <label for="usr">Check-in</label>
-                  <input type="text" class="form-control " placeholder="Check-in" id="datepicker">
+                  <input type="text" class="form-control " placeholder="Check-in" id="datepicker" runat="server" >
               </div>
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-4">
               <div class="form-group">
                 <label for="usr">Check-out</label>
-                  <input type="text" class="form-control" placeholder="Check-out" id="datepicker2">
+                  <input type="text" class="form-control" placeholder="Check-out" id="datepicker2" runat="server">
               </div>
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-2">
              <div class="form-group">
-                  <label for="usr">Adultos:</label>
-              <select class="form-control" id="usr">
+                  <label for="SelectAdul">Adultos:</label>
+              <select class="form-control" id="SelectAdul" runat="server">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -162,12 +163,12 @@
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-2">
                   <div class="form-group">
-                       <label for="usr">Niños</label>
-              <select class="form-control" id="usr">
+                       <label for="SelectNi">Niños</label>
+              <select class="form-control" id="SelectNi" runat="server">
+                  <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
-                  <option value="4">4</option>
               </select>
                   </div>
               </div>
@@ -175,7 +176,8 @@
               <div class=" col-xs-12 col-sm-12 col-md-8">
                <div class="bt">   
                <div class="form-group">
-                  <input type="button" id="btncheck" class="form-control input-lg" value="Buscar">
+                   <asp:Button ID="btncheck" class="form-control input-lg" runat="server" Text="Buscar" OnClick="btncheck_Click" />
+                 
                   </div>
                    </div>
                </div>
@@ -324,7 +326,7 @@
           </div>
       
       </div>
- 
+ </form>
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/functions.js"></script>

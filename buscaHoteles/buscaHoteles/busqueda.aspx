@@ -117,36 +117,19 @@
                    <li>
              <div class="form-group">
                   <label for="usr">Tipo de Hospedaje</label>
-                 <div class="checkbox">
-                     <label><input type="checkbox" value="">Cabaña</label>
-                 </div>
-                 <div class="checkbox">
-                     <label><input type="checkbox" value="">Casa</label>
-                  </div>
-                 <div class="checkbox">     
-                     <label><input type="checkbox" value="">Hotel</label>
-                  </div>
-                 <div class="checkbox">     
-                     <label><input type="checkbox" value="">Resort</label>
-                 </div>
-                 </div>
-             
+                 <asp:PlaceHolder ID="TipoHospedaje" runat="server"></asp:PlaceHolder>
                   </li>
                    <li>
                  <div class="form-group">
                  <label for="usr">Servicios</label>
-                 <div class="checkbox">
-                     <label><input type="checkbox" value="">Acceso a Internet</label>
-                 </div>
-                  <div class="checkbox">     
-                     <label><input type="checkbox" value="">Bar</label>
-                 </div>
-                  <div class="checkbox">        
-                     <label><input type="checkbox" value="">Bañera en la Habitacion</label>
-                 </div>
-                  <div class="checkbox">        
-                     <label><input type="checkbox" value="">Gimnasio</label>
-                        </div>
+                     <asp:PlaceHolder ID="PlaceServicios" runat="server"></asp:PlaceHolder>
+                 
+              </div>
+                  </li>
+                   <li>
+                 <div class="form-group">
+                 <label for="usr">Atracciones</label>
+                  <asp:PlaceHolder ID="PlaceAtraccion" runat="server"></asp:PlaceHolder>
               </div>
                   </li>
                   <li>
@@ -156,6 +139,25 @@
               </div>
           </div>
           <div class="col-xs-10 col-sm-10 col-md-10 ">
+
+              <div class="container">
+                     <div class="row">
+          
+          <div class="HoBuscar">
+               
+                   <div class="hdata">
+          
+             <div class="col-xs-10 col-sm-10 col-md-10">
+                <p><asp:Label ID="LbHotel" runat="server" Text="Label"></asp:Label>-<asp:Label ID="LBfechaIn" runat="server" Text="Label"></asp:Label> - <asp:Label ID="LBfechaSal" runat="server" Text="Label"></asp:Label>,</p><h5> <asp:Label ID="LBNumNoche" runat="server" Text="Label"></asp:Label> noche</h5>,<p> 1 habitación, <asp:Label ID="LBNumAdul" runat="server" Text="Label"></asp:Label> adultos,<asp:Label ID="LBNumNi" runat="server" Text="Label"></asp:Label> Niños</p>
+                 
+                 </div>
+                  </div>
+             </div>
+         
+             </div>
+
+              </div>
+
               <div class="hoteles">
          <div class="hotel">
              <div class="row">

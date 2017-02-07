@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hoteles" Class="hoteldbaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Pedro-Pc;Initial Catalog=Hoteles;Integrated Security=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="HotelesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.administrador" Member="administrador">
+    <Type Name="administrador">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cedula" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="passwor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuario" Member="usuario">
+    <Type Name="usuario">
+      <Column Name="cedula" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nCuenta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="usuario_carrito" Member="carrito" ThisKey="cedula" OtherKey="id_cliente" Type="carrito" />
+      <Association Name="usuario_Reserva" Member="Reserva" ThisKey="cedula" OtherKey="cedula" Type="Reserva" />
+      <Association Name="usuario_tarjetas_cliente" Member="tarjetas_cliente" ThisKey="cedula" OtherKey="id_cliente" Type="tarjetas_cliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.carrito" Member="carrito">
+    <Type Name="carrito">
+      <Column Name="id_carrito" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_Reserva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="usuario_carrito" Member="usuario" ThisKey="id_cliente" OtherKey="cedula" Type="usuario" IsForeignKey="true" />
+      <Association Name="Reserva_carrito" Member="Reserva" ThisKey="id_Reserva" OtherKey="id_Reserva" Type="Reserva" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Catalogo" Member="Catalogo">
+    <Type Name="Catalogo">
+      <Column Name="id_Catalogo" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_Categoria" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Catalogo_servicios_habitacion" Member="servicios_habitacion" ThisKey="id_Catalogo" OtherKey="id_Catalogo" Type="servicios_habitacion" />
+      <Association Name="Catalogo_Servicios_Hotel" Member="Servicios_Hotel" ThisKey="id_Catalogo" OtherKey="id_Catalogo" Type="Servicios_Hotel" />
+      <Association Name="Categorias_Catalogo" Member="Categorias" ThisKey="id_Categoria" OtherKey="id_Categorias" Type="Categorias" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categorias" Member="Categorias">
+    <Type Name="Categorias">
+      <Column Name="id_Categorias" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Categorias_Catalogo" Member="Catalogo" ThisKey="id_Categorias" OtherKey="id_Categoria" Type="Catalogo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estrellas" Member="Estrellas">
+    <Type Name="Estrellas">
+      <Column Name="id_Categorias" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Estrellas_Hotel" Member="Hotel" ThisKey="id_Categorias" OtherKey="Categoria" Type="Hotel" />
+    </Type>
+  </Table>
+  <Table Name="dbo.habitacion" Member="habitacion">
+    <Type Name="habitacion">
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="n_Personas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="id_Tiphabitacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id_Hotel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="habitacion_ofertas" Member="ofertas" ThisKey="id_habitacion" OtherKey="id_habitacion" Type="ofertas" />
+      <Association Name="habitacion_Reserva" Member="Reserva" ThisKey="id_habitacion" OtherKey="id_habitacion" Type="Reserva" />
+      <Association Name="habitacion_servicios_habitacion" Member="servicios_habitacion" ThisKey="id_habitacion" OtherKey="id_habitacion" Type="servicios_habitacion" />
+      <Association Name="Hotel_habitacion" Member="Hotel" ThisKey="id_Hotel" OtherKey="id_Hotel" Type="Hotel" IsForeignKey="true" />
+      <Association Name="tip_habitacion_habitacion" Member="tip_habitacion" ThisKey="id_Tiphabitacion" OtherKey="id_Tiphabitacion" Type="tip_habitacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hotel" Member="Hotel">
+    <Type Name="Hotel">
+      <Column Name="id_Hotel" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_tipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="reseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_localidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="evaluacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="N_habitaciones" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="tipo_pago" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Coordenadas" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="Hotel_habitacion" Member="habitacion" ThisKey="id_Hotel" OtherKey="id_Hotel" Type="habitacion" />
+      <Association Name="Hotel_NumhabitacionesTipo" Member="NumhabitacionesTipo" ThisKey="id_Hotel" OtherKey="id_hotel" Type="NumhabitacionesTipo" />
+      <Association Name="Hotel_Servicios_Hotel" Member="Servicios_Hotel" ThisKey="id_Hotel" OtherKey="id_hotel" Type="Servicios_Hotel" />
+      <Association Name="Estrellas_Hotel" Member="Estrellas" ThisKey="Categoria" OtherKey="id_Categorias" Type="Estrellas" IsForeignKey="true" />
+      <Association Name="Localidad_Hotel" Member="Localidad" ThisKey="id_localidad" OtherKey="id_Localidad" Type="Localidad" IsForeignKey="true" />
+      <Association Name="tipo_hotel_Hotel" Member="tipo_hotel" ThisKey="id_tipo" OtherKey="id_Tipo" Type="tipo_hotel" IsForeignKey="true" />
+      <Association Name="Tipo_Pago_Hotel" Member="Tipo_Pago1" ThisKey="tipo_pago" OtherKey="id_tipoPago" Type="Tipo_Pago" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Localidad" Member="Localidad">
+    <Type Name="Localidad">
+      <Column Name="id_Localidad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_region" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Localidad_Hotel" Member="Hotel" ThisKey="id_Localidad" OtherKey="id_localidad" Type="Hotel" />
+      <Association Name="Region_Localidad" Member="Region" ThisKey="id_region" OtherKey="id_region" Type="Region" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NumhabitacionesTipo" Member="NumhabitacionesTipo">
+    <Type Name="NumhabitacionesTipo">
+      <Column Name="id_numHabitaciones" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_tipohabitacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="cantidadHabitacionTipo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id_hotel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Hotel_NumhabitacionesTipo" Member="Hotel" ThisKey="id_hotel" OtherKey="id_Hotel" Type="Hotel" IsForeignKey="true" />
+      <Association Name="tip_habitacion_NumhabitacionesTipo" Member="tip_habitacion" ThisKey="id_tipohabitacion" OtherKey="id_Tiphabitacion" Type="tip_habitacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofertas" Member="ofertas">
+    <Type Name="ofertas">
+      <Column Name="id_Oferta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descuento" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_Fin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="habitacion_ofertas" Member="habitacion" ThisKey="id_habitacion" OtherKey="id_habitacion" Type="habitacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pais" Member="Pais">
+    <Type Name="Pais">
+      <Column Name="id_Pais" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Pais" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Pais_Region" Member="Region" ThisKey="id_Pais" OtherKey="id_Pais" Type="Region" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Region" Member="Region">
+    <Type Name="Region">
+      <Column Name="id_region" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_Pais" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Region_Localidad" Member="Localidad" ThisKey="id_region" OtherKey="id_region" Type="Localidad" />
+      <Association Name="Pais_Region" Member="Pais" ThisKey="id_Pais" OtherKey="id_Pais" Type="Pais" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reserva" Member="Reserva">
+    <Type Name="Reserva">
+      <Column Name="id_Reserva" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cedula" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_ingreso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_salida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Reserva_carrito" Member="carrito" ThisKey="id_Reserva" OtherKey="id_Reserva" Type="carrito" />
+      <Association Name="habitacion_Reserva" Member="habitacion" ThisKey="id_habitacion" OtherKey="id_habitacion" Type="habitacion" IsForeignKey="true" />
+      <Association Name="usuario_Reserva" Member="usuario" ThisKey="cedula" OtherKey="cedula" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.servicios_habitacion" Member="servicios_habitacion">
+    <Type Name="servicios_habitacion">
+      <Column Name="id_ServicioHabitacion" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_Catalogo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="habitacion_servicios_habitacion" Member="habitacion" ThisKey="id_habitacion" OtherKey="id_habitacion" Type="habitacion" IsForeignKey="true" />
+      <Association Name="Catalogo_servicios_habitacion" Member="Catalogo" ThisKey="id_Catalogo" OtherKey="id_Catalogo" Type="Catalogo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Servicios_Hotel" Member="Servicios_Hotel">
+    <Type Name="Servicios_Hotel">
+      <Column Name="id_ServicioHotel" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_hotel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_Catalogo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Hotel_Servicios_Hotel" Member="Hotel" ThisKey="id_hotel" OtherKey="id_Hotel" Type="Hotel" IsForeignKey="true" />
+      <Association Name="Catalogo_Servicios_Hotel" Member="Catalogo" ThisKey="id_Catalogo" OtherKey="id_Catalogo" Type="Catalogo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tarjetas" Member="Tarjetas">
+    <Type Name="Tarjetas">
+      <Column Name="numeroTarjeta" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Tarjetas_tarjetas_cliente" Member="tarjetas_cliente" ThisKey="numeroTarjeta" OtherKey="num_Tarjeta" Type="tarjetas_cliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tarjetas_cliente" Member="tarjetas_cliente">
+    <Type Name="tarjetas_cliente">
+      <Column Name="id_numTarCliente" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_Tarjeta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Tarjetas_tarjetas_cliente" Member="Tarjetas" ThisKey="num_Tarjeta" OtherKey="numeroTarjeta" Type="Tarjetas" IsForeignKey="true" />
+      <Association Name="usuario_tarjetas_cliente" Member="usuario" ThisKey="id_cliente" OtherKey="cedula" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tip_habitacion" Member="tip_habitacion">
+    <Type Name="tip_habitacion">
+      <Column Name="id_Tiphabitacion" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_Tiphabitacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tip_habitacion_habitacion" Member="habitacion" ThisKey="id_Tiphabitacion" OtherKey="id_Tiphabitacion" Type="habitacion" />
+      <Association Name="tip_habitacion_NumhabitacionesTipo" Member="NumhabitacionesTipo" ThisKey="id_Tiphabitacion" OtherKey="id_tipohabitacion" Type="NumhabitacionesTipo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tipo_hotel" Member="tipo_hotel">
+    <Type Name="tipo_hotel">
+      <Column Name="id_Tipo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tipo_hotel_Hotel" Member="Hotel" ThisKey="id_Tipo" OtherKey="id_tipo" Type="Hotel" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Pago" Member="Tipo_Pago">
+    <Type Name="Tipo_Pago">
+      <Column Name="id_tipoPago" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Tipo_Pago_Hotel" Member="Hotel" ThisKey="id_tipoPago" OtherKey="tipo_pago" Type="Hotel" />
+    </Type>
+  </Table>
+  <Function Name="dbo.obtener_Atraccion" Method="obtener_Atraccion">
+    <ElementType Name="obtener_AtraccionResult">
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.registrarCliente" Method="registrarCliente">
+    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.obtener_servicios" Method="obtener_servicios">
+    <ElementType Name="obtener_serviciosResult">
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.obtenerAtraccionesHotel" Method="obtenerAtraccionesHotel">
+    <Parameter Name="idHotel" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="obtenerAtraccionesHotelResult">
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ObtenerHabitacionesPorHotel" Method="ObtenerHabitacionesPorHotel">
+    <Parameter Name="idHotel" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="ObtenerHabitacionesPorHotelResult">
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="n_Personas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="id_Tiphabitacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id_Hotel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ObtenerOfertas" Method="ObtenerOfertas">
+    <ElementType Name="ObtenerOfertasResult">
+      <Column Name="descuento" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_Fin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_Hotel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_Oferta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.obtenerServiciosHotel" Method="obtenerServiciosHotel">
+    <Parameter Name="idHotel" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="obtenerServiciosHotelResult">
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RegistrarTargeta" Method="RegistrarTargeta">
+    <Parameter Name="num" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ObtenerTiposHotel" Method="ObtenerTiposHotel">
+    <ElementType Name="ObtenerTiposHotelResult">
+      <Column Name="nombre_Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
