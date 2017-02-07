@@ -10,12 +10,12 @@ namespace Negocio
     {
         hoteldbaDataContext Datos = new hoteldbaDataContext();
 
-        public void RegistrarCliente(int cedula,String nombre,String Apellido,String email,int tel,String pass,int numcuenta,String TipoTar) {
+        public void RegistrarCliente(int cedula,String nombre,String Apellido,String email,int tel,String pass,Int64 numcuenta,String TipoTar) {
             try {
                 Datos.registrarCliente(cedula, nombre, Apellido, email, tel, pass);
             } catch (Exception e) {
                 
-
+   
             }
 
             try {
@@ -27,6 +27,7 @@ namespace Negocio
 
         }
 
+        
 
         public List<ServiAtrac> ObtenerServicios() {
             List<ServiAtrac> lista = new List<ServiAtrac>();
