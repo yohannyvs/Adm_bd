@@ -141,13 +141,14 @@
               <div class=" col-xs-12 col-sm-12 col-md-4">
               <div class="form-group">
                   <label for="usr">Check-in</label>
-                  <input type="text" class="form-control " placeholder="Check-in" id="datepicker" runat="server" >
+                   <input type="date" class="form-control"  id="date1" runat="server">
               </div>
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-4">
               <div class="form-group">
                 <label for="usr">Check-out</label>
-                  <input type="text" class="form-control" placeholder="Check-out" id="datepicker2" runat="server">
+                  <input type="date" class="form-control"  id="date2" runat="server">
+                  
               </div>
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-2">

@@ -18,13 +18,18 @@ namespace buscaHoteles
         {
             String hotel, fechain, fechasal, adul, nin;
             hotel = htl.Value;
-            fechain = datepicker.Value;
-            fechasal = datepicker2.Value;
+            fechain = date1.Value;
+            fechasal = date2.Value;
             adul = SelectAdul.Value;
             nin = SelectNi.Value;
 
+            DateTime oldDate = DateTime.Parse(fechain);
+            DateTime newDate = DateTime.Parse(fechasal);
+            TimeSpan ts = newDate - oldDate;
+            String Dias = ts.Days.ToString();
 
-            Response.Redirect("busqueda.aspx?ht="+hotel+"&fi="+fechain+"&fs="+fechasal+"&ad="+adul+"&ni="+nin);
+            
+            Response.Redirect("busqueda.aspx?ht="+hotel+"&fi="+fechain+"&fs="+fechasal+"&ad="+adul+"&ni="+nin+"&no="+Dias);
         }
     }
 }

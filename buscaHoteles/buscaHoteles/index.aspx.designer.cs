@@ -40,22 +40,22 @@ namespace buscaHoteles {
         protected global::System.Web.UI.HtmlControls.HtmlInputText htl;
         
         /// <summary>
-        /// Control datepicker.
+        /// Control date1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date1;
         
         /// <summary>
-        /// Control datepicker2.
+        /// Control date2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date2;
         
         /// <summary>
         /// Control SelectAdul.

@@ -14,7 +14,7 @@ namespace buscaHoteles
         Metodos metodo = new Metodos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            String hotel, fechain, fechasal, adul, nin;
+            String hotel, fechain, fechasal, adul, nin,noc;
 
             hotel = Request.QueryString["ht"].ToString();
 
@@ -25,13 +25,14 @@ namespace buscaHoteles
             adul = Request.QueryString["ad"].ToString();
 
             nin = Request.QueryString["ni"].ToString();
+            noc = Request.QueryString["no"].ToString();
 
             LbHotel.Text = hotel;
             LBfechaIn.Text = fechain;
             LBfechaSal.Text = fechasal;
             LBNumAdul.Text = adul;
             LBNumNi.Text = nin;
-
+            LBNumNoche.Text = noc;
 
 
 

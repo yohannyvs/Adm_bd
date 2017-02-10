@@ -94,10 +94,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminitrador\admin.aspx" />
     <Content Include="busqueda.aspx" />
     <Content Include="css\style.css" />
     <Content Include="Hotel.aspx" />
     <Content Include="images\icono-registro.png" />
+    <Content Include="js\functions.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -117,6 +119,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminitrador\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminitrador\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="busqueda.aspx.cs">
       <DependentUpon>busqueda.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -159,7 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
-    <Folder Include="js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
