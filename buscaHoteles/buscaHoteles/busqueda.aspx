@@ -148,7 +148,7 @@
                    <div class="hdata">
           
              <div class="col-xs-10 col-sm-10 col-md-10">
-                <p><asp:Label ID="LbHotel" runat="server" Text="Label"></asp:Label>-<asp:Label ID="LBfechaIn" runat="server" Text="Label"></asp:Label> - <asp:Label ID="LBfechaSal" runat="server" Text="Label"></asp:Label>,</p><h5> <asp:Label ID="LBNumNoche" runat="server" Text="Label"></asp:Label> noche</h5>,<p> 1 habitación, <asp:Label ID="LBNumAdul" runat="server" Text="Label"></asp:Label> adultos,<asp:Label ID="LBNumNi" runat="server" Text="Label"></asp:Label> Niños</p>
+                <p style=""><asp:Label ID="LbHotel" runat="server" Text="Label"></asp:Label>-<asp:Label ID="LBfechaIn" runat="server" Text="Label"></asp:Label> - <asp:Label ID="LBfechaSal" runat="server" Text="Label"></asp:Label>,</p><h5> <asp:Label ID="LBNumNoche" runat="server" Text="Label"></asp:Label> noche</h5>,<p> 1 habitación, <asp:Label ID="LBNumAdul" runat="server" Text="Label"></asp:Label> adultos,<asp:Label ID="LBNumNi" runat="server" Text="Label"></asp:Label> Niños</p>
                  
                  </div>
                   </div>
@@ -158,53 +158,13 @@
 
               </div>
 
-              <div class="hoteles">
+       <div class="hoteles">
          <div class="hotel">
-             <div class="row">
-              <div class="col-xs-4 col-sm-4 col-md-4">
-                 <div class="Himg"><img src="images/1.jpg"> </div>
-                 </div>
-              <div class="col-xs-6 col-sm-6 col-md-6">    
-              <div class="Hcaract">
-              <div class="Htit"><a href="#"><h3>Cala Luna Hotel</h3></a></div>
-              <div class="Hsubt"><span class="icon-location"></span><h5>Playa Langosta, Tamarindo, Guanacaste, Costa Rica, 0800-012-1776</h5></div> 
-              <div class="Hpre">¢ 93.309 <br/><p>precio por noche</p></div>
-              <div class="tipPago"><span class="icon-checkmark"></span> spagar ahora o en el hotel</div>
-                <div class="btnseleccionar"> <input type="button" value="Seleccionar"> </div>  
-                  </div>
-                  </div> 
-             </div>
-              <div class="row">
-              <div class="col-xs-4 col-sm-4 col-md-4">
-                 <div class="Himg"><img src="images/1.jpg"> </div>
-                 </div>
-              <div class="col-xs-6 col-sm-6 col-md-6">    
-              <div class="Hcaract">
-              <div class="Htit"><a href="#"><h3>Cala Luna Hotel</h3></a></div>
-              <div class="Hsubt"><span class="icon-location"></span><h5>Playa Langosta, Tamarindo, Guanacaste, Costa Rica, 0800-012-1776</h5></div> 
-              <div class="Hpre">¢ 93.309 <br/><p>precio por noche</p></div>
-              <div class="Hadisp">Quedan 4 disponibles</div>
-              <div class="tipPago"><span class="icon-checkmark"></span> spagar ahora o en el hotel</div>
-                <div class="btnseleccionar"> <input type="button" value="Seleccionar"> </div>  
-                  </div>
-                  </div> 
-             </div>
              
-              <div class="row">
-              <div class="col-xs-4 col-sm-4 col-md-4">
-                 <div class="Himg"><img src="images/1.jpg"> </div>
-                 </div>
-              <div class="col-xs-6 col-sm-6 col-md-6">    
-              <div class="Hcaract">
-              <div class="Htit"><a href="#"><h3>Cala Luna Hotel</h3></a></div>
-              <div class="Hsubt"><span class="icon-location"></span><h5>Playa Langosta, Tamarindo, Guanacaste, Costa Rica, 0800-012-1776</h5></div> 
-              <div class="Hpre">¢ 93.309 <br/><p>precio por noche</p></div>
-              <div class="tipPago"><span class="icon-checkmark"></span> spagar ahora o en el hotel</div>
-                <div class="btnseleccionar"> <input type="button" value="Seleccionar"> </div>  
-                  </div>
-                  </div> 
-             </div>
-              </div>
+           
+                  <asp:PlaceHolder ID="PlaceHoteles" runat="server"></asp:PlaceHolder>
+              
+              
             
                   
              
@@ -212,10 +172,10 @@
           
           </div>
           </div>      
-          </div>
+         
       </div>
           
-          
+          </div>
           <div class="row">
           <div class="pie">
               <h1>Busca Hoteles</h1>

@@ -10,6 +10,8 @@ namespace Negocio
     {
         hoteldbaDataContext Datos = new hoteldbaDataContext();
 
+
+        //metodo de registro
         public void RegistrarCliente(int cedula,String nombre,String Apellido,String email,int tel,String pass,Int64 numcuenta,String TipoTar) {
             try {
                 Datos.registrarCliente(cedula, nombre, Apellido, email, tel, pass);
@@ -28,7 +30,7 @@ namespace Negocio
         }
 
         
-
+        // metodo para obtener los servicios
         public List<ServiAtrac> ObtenerServicios() {
             List<ServiAtrac> lista = new List<ServiAtrac>();
 
@@ -51,6 +53,7 @@ namespace Negocio
         }
 
 
+        //metodo obtener las atracciones
         public List<ServiAtrac> ObtenerAtracciones()
         {
             List<ServiAtrac> lista = new List<ServiAtrac>();
@@ -74,6 +77,7 @@ namespace Negocio
         }
 
 
+        //Metodo obtener tipohotel
         public List<ServiAtrac> ObtenerTiposHotel()
         {
             List<ServiAtrac> lista = new List<ServiAtrac>();
@@ -95,6 +99,46 @@ namespace Negocio
 
 
         }
+
+
+
+        //Metodo obtener Buscar Hotel
+        public List<hotel> BuscarHotel(String Busca)
+        {
+            List<hotel> lista = new List<hotel>();
+
+
+            /*Tipo de dato que se crea en tiempo de ejecución*/
+            var resultado = Datos.buscarHotel(Busca);
+
+            /*recorrer el resultado*/
+            foreach (var Descripcion in resultado)
+            {
+                lista.Add(
+                    new hotel(
+                      Descripcion.id_Hotel,
+                      Descripcion.Nombre,
+                      Descripcion.nombre_Tipo,
+                      Descripcion.reseña,
+                      Descripcion.telefono,
+                      Descripcion.direccion,
+                      Descripcion.Localidad,
+                      Descripcion.Estrella,
+                      Descripcion.evaluacion,
+                      Descripcion.N_habitaciones,
+                      Descripcion.tipoPago,
+                      Descripcion.Coordenadas
+                    )
+               );
+            }
+            return lista;
+
+
+        }
+
+
+
+
 
 
     }

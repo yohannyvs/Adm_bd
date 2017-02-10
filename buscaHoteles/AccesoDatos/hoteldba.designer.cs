@@ -293,18 +293,18 @@ namespace AccesoDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarTargeta")]
+		public int RegistrarTargeta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> num, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), num, tipo, cedula);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtener_Atraccion")]
 		public ISingleResult<obtener_AtraccionResult> obtener_Atraccion()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<obtener_AtraccionResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.registrarCliente")]
-		public int registrarCliente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(50)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pass)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, email, tel, pass);
-			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtener_servicios")]
@@ -342,18 +342,25 @@ namespace AccesoDatos
 			return ((ISingleResult<obtenerServiciosHotelResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarTargeta")]
-		public int RegistrarTargeta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> num, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), num, tipo, cedula);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerTiposHotel")]
 		public ISingleResult<ObtenerTiposHotelResult> ObtenerTiposHotel()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<ObtenerTiposHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.registrarCliente")]
+		public int registrarCliente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(50)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pass)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, email, tel, pass);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarHotel")]
+		public ISingleResult<buscarHotelResult> buscarHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dato)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dato);
+			return ((ISingleResult<buscarHotelResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -4862,7 +4869,7 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100)")]
 		public string Nombre
 		{
 			get
@@ -4974,6 +4981,230 @@ namespace AccesoDatos
 				if ((this._nombre_Tipo != value))
 				{
 					this._nombre_Tipo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarHotelResult
+	{
+		
+		private int _id_Hotel;
+		
+		private string _Nombre;
+		
+		private string _nombre_Tipo;
+		
+		private string _tipoPago;
+		
+		private string _Localidad;
+		
+		private string _reseña;
+		
+		private System.Nullable<int> _telefono;
+		
+		private string _direccion;
+		
+		private string _evaluacion;
+		
+		private string _Coordenadas;
+		
+		private System.Nullable<long> _N_habitaciones;
+		
+		private string _Estrella;
+		
+		public buscarHotelResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Hotel", DbType="Int NOT NULL")]
+		public int id_Hotel
+		{
+			get
+			{
+				return this._id_Hotel;
+			}
+			set
+			{
+				if ((this._id_Hotel != value))
+				{
+					this._id_Hotel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Tipo", DbType="VarChar(50)")]
+		public string nombre_Tipo
+		{
+			get
+			{
+				return this._nombre_Tipo;
+			}
+			set
+			{
+				if ((this._nombre_Tipo != value))
+				{
+					this._nombre_Tipo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipoPago", DbType="VarChar(50)")]
+		public string tipoPago
+		{
+			get
+			{
+				return this._tipoPago;
+			}
+			set
+			{
+				if ((this._tipoPago != value))
+				{
+					this._tipoPago = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Localidad", DbType="VarChar(50)")]
+		public string Localidad
+		{
+			get
+			{
+				return this._Localidad;
+			}
+			set
+			{
+				if ((this._Localidad != value))
+				{
+					this._Localidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reseña", DbType="VarChar(100)")]
+		public string reseña
+		{
+			get
+			{
+				return this._reseña;
+			}
+			set
+			{
+				if ((this._reseña != value))
+				{
+					this._reseña = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefono", DbType="Int")]
+		public System.Nullable<int> telefono
+		{
+			get
+			{
+				return this._telefono;
+			}
+			set
+			{
+				if ((this._telefono != value))
+				{
+					this._telefono = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion", DbType="VarChar(100)")]
+		public string direccion
+		{
+			get
+			{
+				return this._direccion;
+			}
+			set
+			{
+				if ((this._direccion != value))
+				{
+					this._direccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evaluacion", DbType="VarChar(100)")]
+		public string evaluacion
+		{
+			get
+			{
+				return this._evaluacion;
+			}
+			set
+			{
+				if ((this._evaluacion != value))
+				{
+					this._evaluacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Coordenadas", DbType="VarChar(MAX)")]
+		public string Coordenadas
+		{
+			get
+			{
+				return this._Coordenadas;
+			}
+			set
+			{
+				if ((this._Coordenadas != value))
+				{
+					this._Coordenadas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_N_habitaciones", DbType="BigInt")]
+		public System.Nullable<long> N_habitaciones
+		{
+			get
+			{
+				return this._N_habitaciones;
+			}
+			set
+			{
+				if ((this._N_habitaciones != value))
+				{
+					this._N_habitaciones = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estrella", DbType="NChar(10)")]
+		public string Estrella
+		{
+			get
+			{
+				return this._Estrella;
+			}
+			set
+			{
+				if ((this._Estrella != value))
+				{
+					this._Estrella = value;
 				}
 			}
 		}

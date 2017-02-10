@@ -101,9 +101,49 @@ namespace buscaHoteles
                 PlaceAtraccion.Controls.Add(new Literal { Text = html3.ToString() });
 
 
+
+
+                /*Generar hoteles de la busqueda*/
+                
+
+
+                StringBuilder html4 = new StringBuilder();
+                var ht = metodo.BuscarHotel(hotel);
+                foreach (var Hotel in ht)
+                {
+
+
+                    html4.Append("<div class='row'>");
+                    html4.Append("<div class='col -xs-4 col-sm-4 col-md-4'>");
+                    html4.Append("<div class='Himg'><img src='images/1.jpg' width='100%'> </div>");
+                    html4.Append("</div>");
+                    html4.Append("<div class='col -xs-6 col-sm-6 col-md-6'>");
+                    html4.Append("<div class='Hcaract'>");
+                    html4.Append("<div class='Htit'><a href='#'><h3> "+Hotel.Nombre_hotel+"</h3></a></div>");
+                    html4.Append("<div class='Hsubt'><span class='icon-location'></span><h5>"+Hotel.Localidad+" , "+Hotel.Id_Hotel+"</h5></div>");
+                    html4.Append("<div class='Hadisp'>Quedan "+Hotel.numHabitacion+" habitaciones </div>");
+                    html4.Append("<div class='tipPago'><span class='icon-checkmark'></span> "+Hotel.TipoPago+"</div>");
+                    html4.Append("<div class='btnseleccionar'> <input type = 'button' value='Seleccionar'> </div> ");
+                    html4.Append("</div>");
+                    html4.Append("</div> ");
+                    html4.Append("</div>");
+
+
+
+                }
+
+                //Append the HTML string to Placeholder.
+                PlaceHoteles.Controls.Add(new Literal { Text = html4.ToString() });
+
+
+
+             
+             
+
+
             }
 
 
-        }
+}
 	}
 }

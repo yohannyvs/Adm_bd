@@ -23,6 +23,9 @@ namespace buscaHoteles
             adul = SelectAdul.Value;
             nin = SelectNi.Value;
 
+           
+
+
             DateTime oldDate = DateTime.Parse(fechain);
             DateTime newDate = DateTime.Parse(fechasal);
             TimeSpan ts = newDate - oldDate;
