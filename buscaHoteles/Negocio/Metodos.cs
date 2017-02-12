@@ -123,11 +123,12 @@ namespace Negocio
                       Descripcion.telefono,
                       Descripcion.direccion,
                       Descripcion.Localidad,
-                      Descripcion.Estrella,
+                      Int32.Parse(Descripcion.Estrella),
                       Descripcion.evaluacion,
                       Descripcion.N_habitaciones,
                       Descripcion.tipoPago,
-                      Descripcion.Coordenadas
+                      Descripcion.Coordenadas,
+                      Descripcion.imagen
                     )
                );
             }
@@ -137,7 +138,115 @@ namespace Negocio
         }
 
 
+        //Metodo obtener Buscar Hotel
+        public List<hotel> ObtenerDatosHotel(int Busca)
+        {
+            List<hotel> lista = new List<hotel>();
 
+
+            /*Tipo de dato que se crea en tiempo de ejecución*/
+            var resultado = Datos.obtenerDatosHotel(Busca);
+
+            /*recorrer el resultado*/
+            foreach (var Descripcion in resultado)
+            {
+                lista.Add(
+                    new hotel(
+                      Descripcion.id_Hotel,
+                      Descripcion.Nombre,
+                      Descripcion.nombre_Tipo,
+                      Descripcion.reseña,
+                      Descripcion.telefono,
+                      Descripcion.direccion,
+                      Descripcion.Localidad,
+                      Int32.Parse(Descripcion.Estrella),
+                      Descripcion.evaluacion,
+                      Descripcion.N_habitaciones,
+                      Descripcion.tipoPago,
+                      Descripcion.Coordenadas,
+                      Descripcion.imagen
+                    )
+               );
+            }
+            return lista;
+
+
+        }
+
+
+        //Metodo obtener Buscar Hotel
+        public List<habita> obtenerHabitacionHotel(int id)
+        {
+            List<habita> lista = new List<habita>();
+
+
+            /*Tipo de dato que se crea en tiempo de ejecución*/
+            var resultado = Datos.ObtenerHabitacionesPorHotel(id);
+
+            /*recorrer el resultado*/
+            foreach (var habitacion in resultado)
+            {
+                lista.Add(
+                    new habita(
+                      habitacion.id_habitacion,
+                      habitacion.estado,
+                      habitacion.n_Personas,
+                      habitacion.precio,
+                      habitacion.nombre_Tiphabitacion,
+                      habitacion.img
+                    )
+               );
+            }
+            return lista;
+
+
+        }
+
+        //metodo obtener las atracciones por Hotel
+        public List<ServiAtrac> ObtenerAtraccionesHotel(Int64 id)
+        {
+            List<ServiAtrac> lista = new List<ServiAtrac>();
+
+
+            /*Tipo de dato que se crea en tiempo de ejecución*/
+            var resultado = Datos.obtenerAtraccionesHotel(id);
+
+            /*recorrer el resultado*/
+            foreach (var Descripcion in resultado)
+            {
+                lista.Add(
+                    new ServiAtrac(
+                       Descripcion.descripcion
+                    )
+               );
+            }
+            return lista;
+
+
+        }
+
+        //metodo obtener las Servicios por Hotel
+        public List<ServiAtrac> ObtenerServiciosHotel(Int64 id)
+        {
+            List<ServiAtrac> lista = new List<ServiAtrac>();
+
+
+            /*Tipo de dato que se crea en tiempo de ejecución*/
+            var resultado = Datos.obtenerServiciosHotel(id);
+
+            /*recorrer el resultado*/
+            foreach (var Descripcion in resultado)
+            {
+                lista.Add(
+                    new ServiAtrac(
+                       Descripcion.descripcion
+                    )
+               );
+            }
+            return lista;
+
+
+        }
 
 
 

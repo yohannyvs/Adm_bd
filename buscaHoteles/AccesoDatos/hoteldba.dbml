@@ -225,23 +225,6 @@
       <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.obtenerAtraccionesHotel" Method="obtenerAtraccionesHotel">
-    <Parameter Name="idHotel" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="obtenerAtraccionesHotelResult">
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ObtenerHabitacionesPorHotel" Method="ObtenerHabitacionesPorHotel">
-    <Parameter Name="idHotel" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="ObtenerHabitacionesPorHotelResult">
-      <Column Name="id_habitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="n_Personas" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="id_Tiphabitacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="id_Hotel" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.ObtenerOfertas" Method="ObtenerOfertas">
     <ElementType Name="ObtenerOfertasResult">
       <Column Name="descuento" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
@@ -250,12 +233,6 @@
       <Column Name="id_Hotel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_habitacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_Oferta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.obtenerServiciosHotel" Method="obtenerServiciosHotel">
-    <Parameter Name="idHotel" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="obtenerServiciosHotelResult">
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.ObtenerTiposHotel" Method="ObtenerTiposHotel">
@@ -286,6 +263,48 @@
       <Column Name="evaluacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Coordenadas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="N_habitaciones" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Estrella" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ObtenerHabitacionesPorHotel" Method="ObtenerHabitacionesPorHotel">
+    <Parameter Name="idHotel" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="ObtenerHabitacionesPorHotelResult">
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="n_Personas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="nombre_Tiphabitacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="img" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.obtenerAtraccionesHotel" Method="obtenerAtraccionesHotel">
+    <Parameter Name="idhotel" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="obtenerAtraccionesHotelResult">
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.obtenerServiciosHotel" Method="obtenerServiciosHotel">
+    <Parameter Name="idhotel" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="obtenerServiciosHotelResult">
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.obtenerDatosHotel" Method="obtenerDatosHotel">
+    <Parameter Name="dato" Type="System.Int32" DbType="Int" />
+    <ElementType Name="obtenerDatosHotelResult">
+      <Column Name="id_Hotel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nombre_Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tipoPago" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Localidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="reseña" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="evaluacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Coordenadas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="N_habitaciones" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Estrella" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>

@@ -77,7 +77,7 @@
                
                    </div>
              <div class="col-xs-8 col-sm-8 col-md-8">
-                       <p> jue, 2 de febrero de 2017 - vie, 3 de febrero de 2017,</p><h5> 1 noche</h5>,<p> 1 habitación, 2 adultos</p>
+                     <p style=""><asp:Label ID="LBfechaIn" runat="server" Text="Label"></asp:Label> - <asp:Label ID="LBfechaSal" runat="server" Text="Label"></asp:Label>,</p><h5> <asp:Label ID="LBNumNoche" runat="server" Text="Label"></asp:Label> noche</h5>,<p> 1 habitación, <asp:Label ID="LBNumAdul" runat="server" Text="Label"></asp:Label> adultos,<asp:Label ID="LBNumNi" runat="server" Text="Label"></asp:Label> Niños</p>
                  <div class="btnmb" id="btnmb"><span class="icon-circle-down"></span>ModificarBusqueda</div>
                  </div>
                   </div>
@@ -141,26 +141,13 @@
           <div class="row">
               <div class="infoHotel">
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                  <div class="infoEncabezado">
-                      <ul>
-                      <li><div id="iconoLuna"> <span class="icon-moon"></span><span class="icon-sun2"></span></div> </li>
-                      <li><h1>Hotel Occidental Tamarindo</h1></li>
-                          <div class="estrellas">
-                      <li><span class="icon-star-full"></span></li>
-                      <li><span class="icon-star-full"></span></li>
-                      <li><span class="icon-star-full"></span></li>
-                      <li><span class="icon-star-full"></span></li>
-                      <li><span class="icon-star-empty"></span></li>
-                              </div>
-                          <li>Playa Langosta, Tamarindo, Guanacaste, 1150, Costa Rica, 0800-012-1776<br/></li>
-                          <li>Ir a:<a> Información general</a> |<a> Opciones de habitación</a> |<a> Información del hotel</a></li>
-                      </ul>
-                    </div>
+                        
+                        <asp:PlaceHolder ID="placeEncabezadoHotel" runat="server"></asp:PlaceHolder>
                   
               </div>
           <div class="col-xs-12 col-sm-12 col-md-8">
           <div class="hotelimg">
-              <img src="images/Florida-Hotel-Orlando-Night.jpg">
+              <asp:PlaceHolder ID="PlaceImagen" runat="server"></asp:PlaceHolder>
               
               </div>
               
@@ -170,10 +157,8 @@
                   <div class="Hservicios">
                       <span class="icon-office"></span><h4>Servicios Principales</h4>
                       <ul>
-                          <li><span class="icon-checkmark"></span></li>
-                          <li><span class="icon-checkmark"></span></li>
-                          <li><span class="icon-checkmark"></span></li>
-                          <li><span class="icon-checkmark"></span></li>
+                         
+                          <asp:PlaceHolder ID="PlaceServicios" runat="server"></asp:PlaceHolder>
                       </ul>
                       </div>
                   
@@ -183,10 +168,7 @@
                   <div class="Hatraccion">
                       <span class="icon-pushpin"></span><h4>Atracciones</h4>
                       <ul>
-                      <li><span class="icon-checkmark"></span></li>
-                      <li><span class="icon-checkmark"></span></li>
-                      <li><span class="icon-checkmark"></span></li>
-                      <li><span class="icon-checkmark"></span></li>
+                       <asp:PlaceHolder ID="PlaceAtracciones" runat="server"></asp:PlaceHolder>
                       </ul>
                       </div>
                   
@@ -218,8 +200,8 @@
                   <div class="row">
                  
                       <div class="Hmapa">
-                       <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2739.6969790360777!2d-83.92510547675015!3d9.861126668442392!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1486395637022" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-                       </div>
+                          <asp:PlaceHolder ID="PlaceMapa" runat="server"></asp:PlaceHolder>
+                            </div>
                       </div>
                  
              
@@ -238,58 +220,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr>
-        <td><div class="contHabit">
-            
-            
-            <div class="tbimg"><img src="images/Florida-Hotel-Orlando-Night.jpg"></div> 
-            <span class="icon-user"></span>
-            <span class="icon-user"></span>
-            <span class="icon-user"></span>
-            <span class="icon-user"></span>
-            <p>Personas</p>
-            <p id="tipohabi">Suite </p>
-             </div>
-            </td>
-        <td>
-            <ul>
-            <li>Todo Incluido</li>
-            <li>Parqueo Gratis</li>
-            <li>Wi-fi</li>
-            
-            </ul> 
-            </td>
-        <td>24 hour deal: save 45%</td>
-        <td> <p id="hprec">¢146.167</p> por noche<br/>
-            <input type="button" value="reservar" id="reservar">
-            </td>
-        </tr>  
-          <tr>
-        <td><div class="contHabit">
-            
-            
-            <div class="tbimg"><img src="images/Florida-Hotel-Orlando-Night.jpg"></div> 
-            <span class="icon-user"></span>
-            <span class="icon-user"></span>
-            <span class="icon-user"></span>
-            <span class="icon-user"></span>
-            <p>Personas</p>
-             </div>
-            </td>
-        <td>
-            <ul>
-            <li>Todo Incluido</li>
-            <li>Parqueo Gratis</li>
-            <li>Wi-fi</li>
-            
-            </ul> 
-            </td>
-        <td>24 hour deal: save 45%</td>
-        <td> <p id="hprec">¢146.167</p> por noche
-            <br/>
-            <input type="button" value="reservar" id="reservar">
-            </td>
-        </tr> 
+        <asp:PlaceHolder ID="PlaceHabitacion" runat="server"></asp:PlaceHolder>
     </tbody>
   </table>
               

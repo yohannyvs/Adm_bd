@@ -65,8 +65,8 @@ namespace AccesoDatos
         }
 
 
-        private string estre;
-        public string Estrellas
+        private Int64 estre;
+        public Int64 Estrellas
         {
             get { return estre; }
             set { estre = value; }
@@ -106,12 +106,18 @@ namespace AccesoDatos
             set { coor = value; }
         }
 
+        private string img;
+        public string Imagen
+        {
+            get { return img; }
+            set { img = value; }
+        }
 
         public hotel() { }
 
 
 
-        public hotel(int id,string nomb,string th,string rs,int? tl,string dir,string loc,string es,string ev, Int64? nh,string tp,string co) {
+        public hotel(int id,string nomb,string th,string rs,int? tl,string dir,string loc,Int32 es,string ev, Int64? nh,string tp,string co,string foto) {
             Id_Hotel = id;
             Nombre_hotel = nomb;
             Tipo = th;
@@ -124,7 +130,7 @@ namespace AccesoDatos
             numHabitacion = nh;
             TipoPago = tp;
             Coordenadas = co;
-
+            Imagen = foto;
 
         }
 

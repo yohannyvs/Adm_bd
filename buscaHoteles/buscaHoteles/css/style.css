@@ -428,7 +428,7 @@ border-radius: 5px;
 .tipPago span{
     padding-right: 5px;
 }
-.btnseleccionar input{
+.btnseleccionar {
     width: 120px;
     height: 30px;
     text-align: center;
@@ -438,7 +438,13 @@ border-radius: 5px;
     margin-top: 15px;
     transition: 2s ease all;
 }
-.btnseleccionar input:hover{
+    .btnseleccionar a {
+    text-decoration:none;
+    color:white;
+    line-height:30px;
+    
+    }
+.btnseleccionar:hover{
     background-color: deepskyblue;
     transition: 2s ease all;
 }
@@ -649,7 +655,7 @@ position: relative;
     
 }
 .Hservicios ul li span{
-    padding-right: 15px;
+    padding-right: 20px;
     color: forestgreen;
     font-size: 18px;
 }

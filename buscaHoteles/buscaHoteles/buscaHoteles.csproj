@@ -97,6 +97,7 @@
     <Content Include="busqueda.aspx" />
     <Content Include="css\style.css" />
     <Content Include="Hotel.aspx" />
+    <Content Include="images\habitacion-confort.jpg" />
     <Content Include="images\icono-registro.png" />
     <Content Include="js\functions.js" />
     <Content Include="packages.config" />
