@@ -1,0 +1,758 @@
+.social{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: fixed ;
+     z-index: 999;
+}
+.social ul{
+    float: right;
+    position: absolute;
+    right: 0;
+    margin-top: -2%;
+    margin-right: 5%;
+    z-index: 1001;
+}
+.social ul li{
+    display: inline;
+    list-style: none;
+    padding: 28px;
+    color: white;
+    transition: 1s ease all;
+}
+.social ul li:hover{
+    color: #ff4157;
+    font-size: 18px;
+    transition: 1s ease all;
+}
+.logo{
+   
+    position: relative;
+}
+.cuadroLogin{
+    width: 40%;
+    height: 180px;
+}
+.btn-menu{
+    color: #ff4157;
+    font-size: 30px;
+    padding-left: 15px;
+    z-index: 1000;
+    transition: 1s ease all;
+    position: relative;
+    line-height: 50px;
+    
+
+}
+.btn-menu:hover{
+    font-size: 40px;
+    transition: 2s ease all;
+    color:#ff4157;
+}
+.menu{
+    margin-top: 50px;
+    width: 20%;
+    background-color:rgba(78, 77, 76, 0.51);
+    height: 100%;
+    z-index: 10000;
+    position:fixed;
+    padding: 0;
+    left: 0;
+    display: none;
+   
+    
+}
+.menu li{
+    width: 100%;
+    list-style: none;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    color: white;
+    margin: 10px auto;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 3s ease all;
+  
+    
+}
+.menu li a{
+    width: 100%;
+    color: white;
+    text-decoration: none !important;
+}
+.menu li:hover>a {
+  transition: 2s ease all;
+    color:#ff4157;
+    font-size: 19px;
+ 
+    
+     
+}
+
+
+
+
+.fonimagen{
+    width: 100%;
+    height: 750px; 
+    position: relative;
+    background-image: url(../images/Florida-Hotel-Orlando-Night.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.text{
+    width: 100%;
+    height: 25%;
+    padding-top: 20%;
+}
+.text h1{
+    color: white;
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+    text-transform: uppercase;
+     font-size: 45px;
+   
+}
+.linea{
+    width: 80px;
+    background-color: white;
+    height: 2px;
+    
+}
+.text h2{
+    color: white;
+    font-family: 'Pathway Gothic One', sans-serif;
+     text-align: center;
+    font-size: 65px;
+    text-transform: uppercase;
+}
+
+
+/*cuadro de busqueda*/ 
+.Cbusca{
+    width: 100%;
+    background-color: #ff4157;
+    height: 310px;
+    position: relative;
+    margin-top: -5%;
+    
+}
+
+.Cbusca h1{
+    color: white;
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.bt{
+    margin-left: 50%;
+    padding-top: 15px;
+}
+
+#btncheck{
+    
+    background-color: #162541;
+    color: white;
+    transition: 1s ease all;
+    
+}
+#btncheck:hover{
+     background-color: #ff4157;
+    border: 2px solid #162541;
+    transition: 1s ease all;
+}
+
+/*ofertas*/
+#of{
+    width: 320px;
+    border-bottom: 2px solid  #162541;
+    border-top: 2px solid  #162541;
+    margin-top: 3%;
+    
+}
+#of h1{
+    text-transform: uppercase;
+    text-align: center;
+     font-family: 'Pathway Gothic One', sans-serif;
+    
+}
+.ofertas{
+    width: 100%;
+    position: relative;
+    padding-top: 3%;
+  
+   
+    
+}
+.oferta{
+  
+    position: relative;
+   
+}
+
+.ofimg img{
+    width: 100%;
+    
+}
+.pordes{
+    padding-top: 2%;
+     text-transform: uppercase;
+     font-family: 'Pathway Gothic One', sans-serif;
+     font-weight: bold;
+    font-size: 2.0em;
+     color:  #ff4157;
+}
+.nombrehotel{
+     padding-top: 2%;
+     text-transform: uppercase;
+     font-family: 'Old Standard TT', serif;
+    color: #162541;
+}
+.vermas{
+     padding-top: 2%;
+     text-transform: uppercase;
+     font-family: 'Old Standard TT', serif;
+}
+.vermas a{
+    text-decoration:  none;
+    color: blue;
+    transition: 2s ease all;
+}
+.vermas a:hover{
+    transition: 2s ease all; 
+    color:  #ff4157;
+}
+
+/*recomendaciones*/
+.recomendaciones{
+    width: 100%;
+    position: relative;
+    margin-top: 2%;
+    overflow: hidden;
+    padding-bottom: 15px;
+    
+}
+.reco1{
+    width: 100%;
+    height: 505px;
+    background-image: url(../images/Florida-Hotel-Orlando-Night.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    margin-top: 5px;
+    border-radius:10px; 
+}
+.reco2{
+    width: 100%;
+    height: 250px;
+    background-image: url(../images/Florida-Hotel-Orlando-Night.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    margin-top: 5px;
+    border-radius:10px;
+}
+.recomendaciones img{
+    width: 100%;
+ 
+    
+}
+.reco1 #destNom{
+ font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 505px;  
+}
+#destNom{
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+    line-height: 250px;
+    font-size: 25px;
+    font-weight: 
+    
+    
+}
+
+/*pie de pagina*/
+.pie{
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    text-align: center;
+    font-family: 'Old Standard TT', serif;
+    color: white;
+}
+.pie h1{
+   padding-top: 1%; 
+}
+.pie ul{
+    width: 100%;
+    padding-top: 2%;
+}
+.pie ul li{
+    width: 100%;
+    display: inline;
+    padding: 25px;
+    text-align: center;
+}
+.pie ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: white
+}
+.pie ul li a:hover{
+    color:  #ff4157;
+}
+
+
+
+
+
+/*Pagina de Busqueda*/
+
+
+
+.filtro{
+    width: 100%;
+    background-color: lightgray;
+    margin-left:  -4.5%;
+    padding-top: 55px;
+    position: relative;
+    color: black;
+     font-family: 'Old Standard TT', serif;
+    text-transform: uppercase;
+    text-align: left;
+    
+}
+.filtro h1{
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.filtro ul{
+    margin: 0;
+    width: 100%;
+    list-style: none;
+      
+    
+}
+.filtro ul li{
+    width: 100%;
+    padding-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid white;
+    color: white;
+     margin-left:  -4.5%;
+}
+.filtro ul li span{
+    color: red !important;
+}
+#buscar{
+    width: 150px;
+    height: 45px;
+    background-color: deepskyblue;
+    color: white;
+    font-family: 'Old Standard TT', serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.hoteles{
+    width: 100%;
+    padding-top: 55px;
+    position: relative;
+    margin-top: 5%;
+}
+.hotel{
+    width: 100%;
+   position: relative;
+    height: 250px;
+    
+   
+}
+.Hadisp{
+    width: 150px;
+    height: 25px;
+    line-height: 25px;
+    background-color: rgb(242, 231, 26);
+   text-align: center;
+    font-size: 10px;
+}
+.Himg{
+    width: 100%;
+    padding-top: 15%;
+    position: relative;
+}
+.Himg img{
+width: 100%; 
+height: 260px;
+border-radius: 5px;    
+
+}
+.Hcaract{
+    width: 100%;
+    position: relative;
+    margin-top: 10%;
+ 
+}
+.Hsubt span{
+    color: deepskyblue;
+    font-size: 20px;
+}
+.Hsubt h5{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 20px;
+}
+.Hpre{
+    width: 100%;
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+.Hpre p{
+    color: grey;
+    font-size: 15px;
+    font-weight: 100;
+    
+}
+.tipPago{
+    color: green;
+    font-size: 13px;
+}
+.tipPago span{
+    padding-right: 5px;
+}
+.btnseleccionar {
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 1px;
+    margin-top: 15px;
+    transition: 2s ease all;
+}
+    .btnseleccionar a {
+    text-decoration:none;
+    color:white;
+    line-height:30px;
+    
+    }
+.btnseleccionar:hover{
+    background-color: deepskyblue;
+    transition: 2s ease all;
+}
+
+
+
+/********** pagina hotel *****/
+
+.HoBuscar{
+    width: 100%;
+    margin-top: 115px;
+    height: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    
+    
+}
+.hdata{
+    width: 100%;
+    height: 40px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 1px solid gray;
+    position: relative;
+    border-radius: 2px;
+    padding-top: 15px;
+    
+    
+}
+.hdata p{
+    display: inline;
+    font-size: 10px;
+    left: 0;
+    
+}
+.hdata h5{
+    display: inline;
+    font-size: 10px;
+    font-weight: bold;
+     
+}
+.hdata a{
+    width: 100%;
+    border-right: 1px solid gray;
+    text-decoration: underline;
+    padding-right: 5px;
+    height: 20px;
+}
+.hdata span{
+    margin-left: 7px;
+}
+.btnmb{
+    display: inline;
+    font-size: 15px;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    transition: 2s ease all;
+    
+}
+.btnmb:hover{
+    transition: 2s ease all;
+    font-size: 17px;
+    color: red;
+}
+.btnmb span{
+    padding: 10px;
+    
+}
+.infoHotel{
+    width: 100%;
+    position: relative;
+    background-color: rgba(211, 211, 211, 0.43);
+    height:55pc;
+    margin-top: 40px;
+}
+#hbus{
+    z-index: 99;
+    background-color: white;
+}
+.infoEncabezado{
+    width: 100%;
+   position: relative;
+}
+.infoEncabezado ul{
+    
+    position: relative;
+}
+.infoEncabezado ul li{
+    list-style: none;
+    display: inline;
+  
+    
+}
+.infoEncabezado ul li h1{
+    font-weight: bold;
+    
+}
+#iconoLuna{
+   
+    position: relative;
+  margin-top: 2%;
+    
+}
+#iconoLuna span{
+    position: relative;
+   font-size: 65px;
+    color: rgb(215, 77, 77);;
+    padding: 10px;
+    font-weight: bold;
+}
+.estrellas{
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+.hotelimg{
+    width: 100%;
+    position: relative;
+}
+.hotelimg img{
+    width: 100%;
+}
+.hotelofer{
+    position: relative;
+    width: 100%;
+    border: 0.5px solid  lightgray;
+    height: 21s0px;
+   
+    border-radius: 1px;
+    
+}
+#hoteloferHead{
+    width: 100;
+    height: 50px;
+    background-color: red;
+    color: white;
+    line-height: 50px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hotelofer ul{
+    width: 100%;
+    position: relative;
+    padding-top: 15px;
+}
+.hotelofer ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: right;
+    padding-right: 35px;
+}
+.hotelofer ul li input{
+    background-color: dodgerblue;
+    color: white;
+    height: 30px;
+    width: 150px;
+}
+
+.preA{
+    text-decoration:  line-through;
+    color: darkgrey;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 15px;
+}
+.preOF{
+     font-size: 20px;
+    font-weight: bold;
+}
+.hotelServ{
+  width: 100%;
+position: relative;
+    margin-top: 4%;
+}
+.Hservicios{
+    width: 100%;
+    position: relative;
+}
+.Hservicios span{
+    position: relative;
+    font-size: 18px;
+    display: inline;
+    padding-right: 10px;
+}
+.Hservicios h4{
+    font-weight: bold;
+    font-size: 18px;
+    display: inline;
+}
+.Hservicios ul{
+    position: relative;
+    width: 100%;
+    
+}
+.Hservicios ul li{
+    position: relative;
+    width: 100%;
+    font-size: 15px;
+    list-style: none;
+    display: block;
+    padding-bottom:15px;
+    
+}
+.Hservicios ul li span{
+    padding-right: 20px;
+    color: forestgreen;
+    font-size: 18px;
+}
+
+.Hatraccion{
+    width: 100%;
+    position: relative;
+}
+
+.Hatraccion span{
+    position: relative;
+    font-size: 18px;
+    display: inline;
+    padding-right: 10px;
+}
+.Hatraccion h4{
+    font-weight: bold;
+    font-size: 18px;
+    display: inline;
+}
+.Hatraccion ul{
+    position: relative;
+    width: 100%;
+    
+}
+.Hatraccion ul li{
+    position: relative;
+    width: 100%;
+    font-size: 15px;
+    list-style: none;
+    display: block;
+    padding-bottom:15px;
+    
+}
+.Hatraccion ul li span{
+    padding-right: 15px;
+    color: forestgreen;
+    font-size: 18px;
+}
+
+.Hmapa{
+    width: 100%;
+    height: 250px;
+    margin-top: 5%;
+    padding-bottom: 3%;
+}
+.hotelHabitaciones{
+    position: relative;
+    width: 100%;
+}
+.hotelHabitaciones h1{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.contHabit{
+    width: 100%;
+    position: relative;
+}
+
+.tbimg img{
+   width: 350px;
+    height: 150px;
+    position: relative;     
+}
+.contHabit span{
+    display: inline;
+    position: relative;
+    margin-top:35px;
+    
+    
+}
+#hprec{
+    color: gray;
+    font-size: 20px;
+}
+#tipohabi{
+    color: forestgreen;
+    font-size: 18px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+#reservar{
+    background-color: deepskyblue;
+    color: white;
+    font-size: 18px;
+    width: 180px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 25px;
+     transition: 1s ease all;
+    
+}
+#reservar:hover{
+    color: deepskyblue;
+    background-color: azure;
+    transition: 1s ease all;
+}

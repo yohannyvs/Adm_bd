@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hoteles" Class="hoteldbaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=Pedro-Pc;Initial Catalog=Hoteles;Integrated Security=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="HotelesConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=progradb.database.windows.net;Initial Catalog=Hoteles;User ID=progra" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="HotelesConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.administrador" Member="administrador">
     <Type Name="administrador">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
@@ -306,6 +306,290 @@
       <Column Name="N_habitaciones" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="imagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Estrella" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.actualizarCarrito" Method="actualizarCarrito">
+    <Parameter Name="id_carr" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_clie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_Reser" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarCatalogo" Method="actualizarCatalogo">
+    <Parameter Name="id_catalogo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id_categoria" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarCategoria" Method="actualizarCategoria">
+    <Parameter Name="id_categorias" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarEstrellas" Method="actualizarEstrellas">
+    <Parameter Name="id_categorias" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarHabitacion" Method="actualizarHabitacion">
+    <Parameter Name="id_Habitacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="N_personas" Parameter="n_personas" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Precio" Parameter="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Id_TipoHabitacion" Parameter="id_TipoHabitacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Hotel" Parameter="id_Hotel" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarHotel" Method="actualizarHotel">
+    <Parameter Name="Id_Hotel" Parameter="id_Hotel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id_Tipo" Parameter="id_Tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Reseña" Parameter="reseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id_Localidad" Parameter="id_Localidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoria" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Evaluacion" Parameter="evaluacion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="n_Habitaciones" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Tipo_Pago" Parameter="tipo_Pago" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="coordenadas" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarOfertas" Method="actualizarOfertas">
+    <Parameter Name="id_oferta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_Habitacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descuento" Parameter="descuento" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarReserva" Method="actualizarReserva">
+    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Id_Habitacion" Parameter="id_Habitacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaIngreso" Parameter="fechaIngreso" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaSalida" Parameter="fechaSalida" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Total" Parameter="total" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarServicioHabitacion" Method="actualizarServicioHabitacion">
+    <Parameter Name="Id_ServicioHabitacion" Parameter="id_ServicioHabitacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Catalogo" Parameter="id_Catalogo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Habitacion" Parameter="id_Habitacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarServiciosHotel" Method="actualizarServiciosHotel">
+    <Parameter Name="Id_ServicioHotel" Parameter="id_ServicioHotel" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Hotel" Parameter="id_Hotel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Id_Catalogo" Parameter="id_Catalogo" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarTipoHabitacion" Method="actualizarTipoHabitacion">
+    <Parameter Name="Id_TipoHabitacion" Parameter="id_TipoHabitacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Nombre_TipoHabitacion" Parameter="nombre_TipoHabitacion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.actualizarUsuario" Method="actualizarUsuario">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="telefono" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pass" Parameter="pass" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="n_Cuenta" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Administrador" Method="eliminar_Administrador">
+    <Parameter Name="cedula_Adm" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Carrito" Method="eliminar_Carrito">
+    <Parameter Name="id_carrito" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Catalogo" Method="eliminar_Catalogo">
+    <Parameter Name="id_Catalogo" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Categorias" Method="eliminar_Categorias">
+    <Parameter Name="id_Categorias" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Hotel" Method="eliminar_Hotel">
+    <Parameter Name="id_Hotel" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Ofertas" Method="eliminar_Ofertas">
+    <Parameter Name="id_Oferta" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Resrva" Method="eliminar_Resrva">
+    <Parameter Name="id_Reserva" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_seviciosHabitaion" Method="eliminar_seviciosHabitaion">
+    <Parameter Name="id_ServicioHabitacion" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_seviciosHotel" Method="eliminar_seviciosHotel">
+    <Parameter Name="id_ServicioHotel" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Tarjeta" Method="eliminar_Tarjeta">
+    <Parameter Name="numeroTarjeta" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Tarjeta_Cliente" Method="eliminar_Tarjeta_Cliente">
+    <Parameter Name="id_numTarCliente" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Tipo_Habitacion" Method="eliminar_Tipo_Habitacion">
+    <Parameter Name="id_Tiphabitacion" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Tipo_Hotel" Method="eliminar_Tipo_Hotel">
+    <Parameter Name="id_Tipo" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminar_Usuario" Method="eliminar_Usuario">
+    <Parameter Name="cedula" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Adm" Method="insertar_Adm">
+    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="passwor" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Carrito" Method="insertar_Carrito">
+    <Parameter Name="id_cliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_Reserva" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Catalago" Method="insertar_Catalago">
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id_Categoria" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Categorias" Method="insertar_Categorias">
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Estrellas" Method="insertar_Estrellas">
+    <Parameter Name="id_Categorias" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="descripcion" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Habitacion" Method="insertar_Habitacion">
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="n_Personas" Type="System.Int32" DbType="Int" />
+    <Parameter Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="id_Tiphabitacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_Hotel" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Hotel" Method="insertar_Hotel">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id_tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="reseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="telefono" Type="System.Int32" DbType="Int" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id_localidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Categoria" Parameter="categoria" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="evaluacion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="N_habitaciones" Parameter="n_habitaciones" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="tipo_pago" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Coordenadas" Parameter="coordenadas" Type="System.String" DbType="VarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Localidad" Method="insertar_Localidad">
+    <Parameter Name="id_region" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_NumHabitacionesTipo" Method="insertar_NumHabitacionesTipo">
+    <Parameter Name="id_tipohabitacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="cantidadHabitacionTipo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_hotel" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Ofertas" Method="insertar_Ofertas">
+    <Parameter Name="id_habitacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descuento" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="fecha_Fin" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Pais" Method="insertar_Pais">
+    <Parameter Name="Nombre_Pais" Parameter="nombre_Pais" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Region" Method="insertar_Region">
+    <Parameter Name="id_Pais" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Reserva" Method="insertar_Reserva">
+    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_habitacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha_ingreso" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fecha_salida" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="total" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Servicio_Habitacion" Method="insertar_Servicio_Habitacion">
+    <Parameter Name="id_Catalogo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_habitacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Servicios_Hotel" Method="insertar_Servicios_Hotel">
+    <Parameter Name="id_hotel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_Catalogo" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Tarjetas" Method="insertar_Tarjetas">
+    <Parameter Name="numeroTarjeta" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Tarjetas_Cliente" Method="insertar_Tarjetas_Cliente">
+    <Parameter Name="id_cliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="num_Tarjeta" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_tipo_Habitacion" Method="insertar_tipo_Habitacion">
+    <Parameter Name="nombre_Tiphabitacion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_tipo_hotel" Method="insertar_tipo_hotel">
+    <Parameter Name="nombre_Tipo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_tipo_Pago" Method="insertar_tipo_Pago">
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertar_Usuario" Method="insertar_Usuario">
+    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nCuenta" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ObtenerHabitacionesPorHotel" Method="ObtenerHabitacionesPorHotel1">
+    <Parameter Name="idHotel" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="ObtenerHabitacionesPorHotelResult1">
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="n_Personas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="id_Tiphabitacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id_Hotel" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
