@@ -33,9 +33,6 @@ namespace AccesoDatos
     partial void Insertadministrador(administrador instance);
     partial void Updateadministrador(administrador instance);
     partial void Deleteadministrador(administrador instance);
-    partial void Insertusuario(usuario instance);
-    partial void Updateusuario(usuario instance);
-    partial void Deleteusuario(usuario instance);
     partial void Insertcarrito(carrito instance);
     partial void Updatecarrito(carrito instance);
     partial void Deletecarrito(carrito instance);
@@ -93,6 +90,9 @@ namespace AccesoDatos
     partial void InsertTipo_Pago(Tipo_Pago instance);
     partial void UpdateTipo_Pago(Tipo_Pago instance);
     partial void DeleteTipo_Pago(Tipo_Pago instance);
+    partial void Insertusuario(usuario instance);
+    partial void Updateusuario(usuario instance);
+    partial void Deleteusuario(usuario instance);
     #endregion
 		
 		public hoteldbaDataContext() : 
@@ -130,14 +130,6 @@ namespace AccesoDatos
 			get
 			{
 				return this.GetTable<administrador>();
-			}
-		}
-		
-		public System.Data.Linq.Table<usuario> usuario
-		{
-			get
-			{
-				return this.GetTable<usuario>();
 			}
 		}
 		
@@ -293,81 +285,12 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarTargeta")]
-		public int RegistrarTargeta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> num, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula)
+		public System.Data.Linq.Table<usuario> usuario
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), num, tipo, cedula);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtener_Atraccion")]
-		public ISingleResult<obtener_AtraccionResult> obtener_Atraccion()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<obtener_AtraccionResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtener_servicios")]
-		public ISingleResult<obtener_serviciosResult> obtener_servicios()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<obtener_serviciosResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerOfertas")]
-		public ISingleResult<ObtenerOfertasResult> ObtenerOfertas()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<ObtenerOfertasResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerTiposHotel")]
-		public ISingleResult<ObtenerTiposHotelResult> ObtenerTiposHotel()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<ObtenerTiposHotelResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.registrarCliente")]
-		public int registrarCliente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(50)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pass)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, email, tel, pass);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarHotel")]
-		public ISingleResult<buscarHotelResult> buscarHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dato)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dato);
-			return ((ISingleResult<buscarHotelResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerHabitacionesPorHotel")]
-		public ISingleResult<ObtenerHabitacionesPorHotelResult> ObtenerHabitacionesPorHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idHotel)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHotel);
-			return ((ISingleResult<ObtenerHabitacionesPorHotelResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerAtraccionesHotel")]
-		public ISingleResult<obtenerAtraccionesHotelResult> obtenerAtraccionesHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idhotel)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idhotel);
-			return ((ISingleResult<obtenerAtraccionesHotelResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerServiciosHotel")]
-		public ISingleResult<obtenerServiciosHotelResult> obtenerServiciosHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idhotel)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idhotel);
-			return ((ISingleResult<obtenerServiciosHotelResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerDatosHotel")]
-		public ISingleResult<obtenerDatosHotelResult> obtenerDatosHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dato)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dato);
-			return ((ISingleResult<obtenerDatosHotelResult>)(result.ReturnValue));
+			get
+			{
+				return this.GetTable<usuario>();
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarCarrito")]
@@ -452,6 +375,13 @@ namespace AccesoDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, email, telefono, pass, n_Cuenta);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarHotel")]
+		public ISingleResult<buscarHotelResult> buscarHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dato)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dato);
+			return ((ISingleResult<buscarHotelResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminar_Administrador")]
@@ -699,11 +629,130 @@ namespace AccesoDatos
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LogeoUsuario")]
+		public ISingleResult<LogeoUsuarioResult> LogeoUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string user)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user);
+			return ((ISingleResult<LogeoUsuarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtener_Atraccion")]
+		public ISingleResult<obtener_AtraccionResult> obtener_Atraccion()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<obtener_AtraccionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtener_servicios")]
+		public ISingleResult<obtener_serviciosResult> obtener_servicios()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<obtener_serviciosResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerAtraccionesHotel")]
+		public ISingleResult<obtenerAtraccionesHotelResult> obtenerAtraccionesHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idhotel)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idhotel);
+			return ((ISingleResult<obtenerAtraccionesHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerCedula")]
+		public ISingleResult<obtenerCedulaResult> obtenerCedula([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email);
+			return ((ISingleResult<obtenerCedulaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerDatosHotel")]
+		public ISingleResult<obtenerDatosHotelResult> obtenerDatosHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dato)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dato);
+			return ((ISingleResult<obtenerDatosHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerdatosPersona")]
+		public ISingleResult<obtenerdatosPersonaResult> obtenerdatosPersona([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
+			return ((ISingleResult<obtenerdatosPersonaResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerHabitacionesPorHotel")]
-		public ISingleResult<ObtenerHabitacionesPorHotelResult1> ObtenerHabitacionesPorHotel1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idHotel)
+		public ISingleResult<ObtenerHabitacionesPorHotelResult> ObtenerHabitacionesPorHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idHotel)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHotel);
-			return ((ISingleResult<ObtenerHabitacionesPorHotelResult1>)(result.ReturnValue));
+			return ((ISingleResult<ObtenerHabitacionesPorHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerNumeroHabitacionesTipo")]
+		public ISingleResult<obtenerNumeroHabitacionesTipoResult> obtenerNumeroHabitacionesTipo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idHotel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idTipoHabitacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHotel, idTipoHabitacion);
+			return ((ISingleResult<obtenerNumeroHabitacionesTipoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerOfertas")]
+		public ISingleResult<obtenerOfertasResult> obtenerOfertas()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<obtenerOfertasResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerRegistro")]
+		public ISingleResult<obtenerRegistroResult> obtenerRegistro([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
+			return ((ISingleResult<obtenerRegistroResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerServiciosHabitacion")]
+		public ISingleResult<ObtenerServiciosHabitacionResult> ObtenerServiciosHabitacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idHabitacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHabitacion);
+			return ((ISingleResult<ObtenerServiciosHabitacionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerServiciosHotel")]
+		public ISingleResult<obtenerServiciosHotelResult> obtenerServiciosHotel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idhotel)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idhotel);
+			return ((ISingleResult<obtenerServiciosHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerTarjetasCliente")]
+		public ISingleResult<ObtenerTarjetasClienteResult> ObtenerTarjetasCliente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idCliente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCliente);
+			return ((ISingleResult<ObtenerTarjetasClienteResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerTiposHotel")]
+		public ISingleResult<ObtenerTiposHotelResult> ObtenerTiposHotel()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ObtenerTiposHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.registrarCliente")]
+		public int registrarCliente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(50)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pass)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, email, tel, pass);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarTargeta")]
+		public int RegistrarTargeta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> num, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), num, tipo, cedula);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reservar")]
+		public int reservar([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_habitacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_hotel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fechaIngreso, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fechaSalida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Decimal(18,0)")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(1)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, id_habitacion, id_tipo, id_hotel, fechaIngreso, fechaSalida, total, estado);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -865,296 +914,6 @@ namespace AccesoDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.usuario")]
-	public partial class usuario : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _cedula;
-		
-		private string _Nombre;
-		
-		private string _Apellido;
-		
-		private string _Email;
-		
-		private System.Nullable<int> _Telefono;
-		
-		private string _pass;
-		
-		private System.Nullable<long> _nCuenta;
-		
-		private EntitySet<carrito> _carrito;
-		
-		private EntitySet<Reserva> _Reserva;
-		
-		private EntitySet<tarjetas_cliente> _tarjetas_cliente;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OncedulaChanging(int value);
-    partial void OncedulaChanged();
-    partial void OnNombreChanging(string value);
-    partial void OnNombreChanged();
-    partial void OnApellidoChanging(string value);
-    partial void OnApellidoChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnTelefonoChanging(System.Nullable<int> value);
-    partial void OnTelefonoChanged();
-    partial void OnpassChanging(string value);
-    partial void OnpassChanged();
-    partial void OnnCuentaChanging(System.Nullable<long> value);
-    partial void OnnCuentaChanged();
-    #endregion
-		
-		public usuario()
-		{
-			this._carrito = new EntitySet<carrito>(new Action<carrito>(this.attach_carrito), new Action<carrito>(this.detach_carrito));
-			this._Reserva = new EntitySet<Reserva>(new Action<Reserva>(this.attach_Reserva), new Action<Reserva>(this.detach_Reserva));
-			this._tarjetas_cliente = new EntitySet<tarjetas_cliente>(new Action<tarjetas_cliente>(this.attach_tarjetas_cliente), new Action<tarjetas_cliente>(this.detach_tarjetas_cliente));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int cedula
-		{
-			get
-			{
-				return this._cedula;
-			}
-			set
-			{
-				if ((this._cedula != value))
-				{
-					this.OncedulaChanging(value);
-					this.SendPropertyChanging();
-					this._cedula = value;
-					this.SendPropertyChanged("cedula");
-					this.OncedulaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this.OnNombreChanging(value);
-					this.SendPropertyChanging();
-					this._Nombre = value;
-					this.SendPropertyChanged("Nombre");
-					this.OnNombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apellido", DbType="VarChar(50)")]
-		public string Apellido
-		{
-			get
-			{
-				return this._Apellido;
-			}
-			set
-			{
-				if ((this._Apellido != value))
-				{
-					this.OnApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._Apellido = value;
-					this.SendPropertyChanged("Apellido");
-					this.OnApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(60)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="Int")]
-		public System.Nullable<int> Telefono
-		{
-			get
-			{
-				return this._Telefono;
-			}
-			set
-			{
-				if ((this._Telefono != value))
-				{
-					this.OnTelefonoChanging(value);
-					this.SendPropertyChanging();
-					this._Telefono = value;
-					this.SendPropertyChanged("Telefono");
-					this.OnTelefonoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pass", DbType="VarChar(50)")]
-		public string pass
-		{
-			get
-			{
-				return this._pass;
-			}
-			set
-			{
-				if ((this._pass != value))
-				{
-					this.OnpassChanging(value);
-					this.SendPropertyChanging();
-					this._pass = value;
-					this.SendPropertyChanged("pass");
-					this.OnpassChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nCuenta", DbType="BigInt")]
-		public System.Nullable<long> nCuenta
-		{
-			get
-			{
-				return this._nCuenta;
-			}
-			set
-			{
-				if ((this._nCuenta != value))
-				{
-					this.OnnCuentaChanging(value);
-					this.SendPropertyChanging();
-					this._nCuenta = value;
-					this.SendPropertyChanged("nCuenta");
-					this.OnnCuentaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_carrito", Storage="_carrito", ThisKey="cedula", OtherKey="id_cliente")]
-		public EntitySet<carrito> carrito
-		{
-			get
-			{
-				return this._carrito;
-			}
-			set
-			{
-				this._carrito.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_Reserva", Storage="_Reserva", ThisKey="cedula", OtherKey="cedula")]
-		public EntitySet<Reserva> Reserva
-		{
-			get
-			{
-				return this._Reserva;
-			}
-			set
-			{
-				this._Reserva.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_tarjetas_cliente", Storage="_tarjetas_cliente", ThisKey="cedula", OtherKey="id_cliente")]
-		public EntitySet<tarjetas_cliente> tarjetas_cliente
-		{
-			get
-			{
-				return this._tarjetas_cliente;
-			}
-			set
-			{
-				this._tarjetas_cliente.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_carrito(carrito entity)
-		{
-			this.SendPropertyChanging();
-			entity.usuario = this;
-		}
-		
-		private void detach_carrito(carrito entity)
-		{
-			this.SendPropertyChanging();
-			entity.usuario = null;
-		}
-		
-		private void attach_Reserva(Reserva entity)
-		{
-			this.SendPropertyChanging();
-			entity.usuario = this;
-		}
-		
-		private void detach_Reserva(Reserva entity)
-		{
-			this.SendPropertyChanging();
-			entity.usuario = null;
-		}
-		
-		private void attach_tarjetas_cliente(tarjetas_cliente entity)
-		{
-			this.SendPropertyChanging();
-			entity.usuario = this;
-		}
-		
-		private void detach_tarjetas_cliente(tarjetas_cliente entity)
-		{
-			this.SendPropertyChanging();
-			entity.usuario = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.carrito")]
 	public partial class carrito : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1169,9 +928,9 @@ namespace AccesoDatos
 		
 		private string _Estado;
 		
-		private EntityRef<usuario> _usuario;
-		
 		private EntityRef<Reserva> _Reserva;
+		
+		private EntityRef<usuario> _usuario;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1189,8 +948,8 @@ namespace AccesoDatos
 		
 		public carrito()
 		{
-			this._usuario = default(EntityRef<usuario>);
 			this._Reserva = default(EntityRef<Reserva>);
+			this._usuario = default(EntityRef<usuario>);
 			OnCreated();
 		}
 		
@@ -1282,40 +1041,6 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_carrito", Storage="_usuario", ThisKey="id_cliente", OtherKey="cedula", IsForeignKey=true)]
-		public usuario usuario
-		{
-			get
-			{
-				return this._usuario.Entity;
-			}
-			set
-			{
-				usuario previousValue = this._usuario.Entity;
-				if (((previousValue != value) 
-							|| (this._usuario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._usuario.Entity = null;
-						previousValue.carrito.Remove(this);
-					}
-					this._usuario.Entity = value;
-					if ((value != null))
-					{
-						value.carrito.Add(this);
-						this._id_cliente = value.cedula;
-					}
-					else
-					{
-						this._id_cliente = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("usuario");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Reserva_carrito", Storage="_Reserva", ThisKey="id_Reserva", OtherKey="id_Reserva", IsForeignKey=true)]
 		public Reserva Reserva
 		{
@@ -1346,6 +1071,40 @@ namespace AccesoDatos
 						this._id_Reserva = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Reserva");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_carrito", Storage="_usuario", ThisKey="id_cliente", OtherKey="cedula", IsForeignKey=true)]
+		public usuario usuario
+		{
+			get
+			{
+				return this._usuario.Entity;
+			}
+			set
+			{
+				usuario previousValue = this._usuario.Entity;
+				if (((previousValue != value) 
+							|| (this._usuario.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._usuario.Entity = null;
+						previousValue.carrito.Remove(this);
+					}
+					this._usuario.Entity = value;
+					if ((value != null))
+					{
+						value.carrito.Add(this);
+						this._id_cliente = value.cedula;
+					}
+					else
+					{
+						this._id_cliente = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("usuario");
 				}
 			}
 		}
@@ -1824,6 +1583,8 @@ namespace AccesoDatos
 		
 		private System.Nullable<int> _id_Hotel;
 		
+		private string _img;
+		
 		private EntitySet<ofertas> _ofertas;
 		
 		private EntitySet<Reserva> _Reserva;
@@ -1850,6 +1611,8 @@ namespace AccesoDatos
     partial void Onid_TiphabitacionChanged();
     partial void Onid_HotelChanging(System.Nullable<int> value);
     partial void Onid_HotelChanged();
+    partial void OnimgChanging(string value);
+    partial void OnimgChanged();
     #endregion
 		
 		public habitacion()
@@ -1986,6 +1749,26 @@ namespace AccesoDatos
 					this._id_Hotel = value;
 					this.SendPropertyChanged("id_Hotel");
 					this.Onid_HotelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img", DbType="VarChar(MAX)")]
+		public string img
+		{
+			get
+			{
+				return this._img;
+			}
+			set
+			{
+				if ((this._img != value))
+				{
+					this.OnimgChanging(value);
+					this.SendPropertyChanging();
+					this._img = value;
+					this.SendPropertyChanged("img");
+					this.OnimgChanged();
 				}
 			}
 		}
@@ -2184,6 +1967,8 @@ namespace AccesoDatos
 		
 		private string _Coordenadas;
 		
+		private string _imagen;
+		
 		private EntitySet<habitacion> _habitacion;
 		
 		private EntitySet<NumhabitacionesTipo> _NumhabitacionesTipo;
@@ -2226,6 +2011,8 @@ namespace AccesoDatos
     partial void Ontipo_pagoChanged();
     partial void OnCoordenadasChanging(string value);
     partial void OnCoordenadasChanged();
+    partial void OnimagenChanging(string value);
+    partial void OnimagenChanged();
     #endregion
 		
 		public Hotel()
@@ -2260,7 +2047,7 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100)")]
 		public string Nombre
 		{
 			get
@@ -2304,7 +2091,7 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reseña", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reseña", DbType="VarChar(100)")]
 		public string reseña
 		{
 			get
@@ -2344,7 +2131,7 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion", DbType="VarChar(100)")]
 		public string direccion
 		{
 			get
@@ -2412,7 +2199,7 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evaluacion", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evaluacion", DbType="VarChar(100)")]
 		public string evaluacion
 		{
 			get
@@ -2476,7 +2263,7 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Coordenadas", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Coordenadas", DbType="VarChar(MAX)")]
 		public string Coordenadas
 		{
 			get
@@ -2492,6 +2279,26 @@ namespace AccesoDatos
 					this._Coordenadas = value;
 					this.SendPropertyChanged("Coordenadas");
 					this.OnCoordenadasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imagen", DbType="VarChar(MAX)")]
+		public string imagen
+		{
+			get
+			{
+				return this._imagen;
+			}
+			set
+			{
+				if ((this._imagen != value))
+				{
+					this.OnimagenChanging(value);
+					this.SendPropertyChanging();
+					this._imagen = value;
+					this.SendPropertyChanged("imagen");
+					this.OnimagenChanged();
 				}
 			}
 		}
@@ -3133,7 +2940,7 @@ namespace AccesoDatos
 		
 		private System.Nullable<int> _id_habitacion;
 		
-		private System.Nullable<decimal> _descuento;
+		private string _descuento;
 		
 		private string _fecha_Fin;
 		
@@ -3147,7 +2954,7 @@ namespace AccesoDatos
     partial void Onid_OfertaChanged();
     partial void Onid_habitacionChanging(System.Nullable<int> value);
     partial void Onid_habitacionChanged();
-    partial void OndescuentoChanging(System.Nullable<decimal> value);
+    partial void OndescuentoChanging(string value);
     partial void OndescuentoChanged();
     partial void Onfecha_FinChanging(string value);
     partial void Onfecha_FinChanged();
@@ -3203,8 +3010,8 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descuento", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> descuento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descuento", DbType="VarChar(50)")]
+		public string descuento
 		{
 			get
 			{
@@ -3223,7 +3030,7 @@ namespace AccesoDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Fin", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Fin", DbType="VarChar(80)")]
 		public string fecha_Fin
 		{
 			get
@@ -4967,110 +4774,81 @@ namespace AccesoDatos
 		}
 	}
 	
-	public partial class obtener_AtraccionResult
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.usuario")]
+	public partial class usuario : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private string _descripcion;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		public obtener_AtraccionResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(50)")]
-		public string descripcion
-		{
-			get
-			{
-				return this._descripcion;
-			}
-			set
-			{
-				if ((this._descripcion != value))
-				{
-					this._descripcion = value;
-				}
-			}
-		}
-	}
-	
-	public partial class obtener_serviciosResult
-	{
-		
-		private string _descripcion;
-		
-		public obtener_serviciosResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(50)")]
-		public string descripcion
-		{
-			get
-			{
-				return this._descripcion;
-			}
-			set
-			{
-				if ((this._descripcion != value))
-				{
-					this._descripcion = value;
-				}
-			}
-		}
-	}
-	
-	public partial class ObtenerOfertasResult
-	{
-		
-		private System.Nullable<decimal> _descuento;
-		
-		private string _fecha_Fin;
+		private int _cedula;
 		
 		private string _Nombre;
 		
-		private int _id_Hotel;
+		private string _Apellido;
 		
-		private System.Nullable<int> _id_habitacion;
+		private string _Email;
 		
-		private int _id_Oferta;
+		private System.Nullable<int> _Telefono;
 		
-		public ObtenerOfertasResult()
+		private string _pass;
+		
+		private System.Nullable<long> _nCuenta;
+		
+		private EntitySet<carrito> _carrito;
+		
+		private EntitySet<Reserva> _Reserva;
+		
+		private EntitySet<tarjetas_cliente> _tarjetas_cliente;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OncedulaChanging(int value);
+    partial void OncedulaChanged();
+    partial void OnNombreChanging(string value);
+    partial void OnNombreChanged();
+    partial void OnApellidoChanging(string value);
+    partial void OnApellidoChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnTelefonoChanging(System.Nullable<int> value);
+    partial void OnTelefonoChanged();
+    partial void OnpassChanging(string value);
+    partial void OnpassChanged();
+    partial void OnnCuentaChanging(System.Nullable<long> value);
+    partial void OnnCuentaChanged();
+    #endregion
+		
+		public usuario()
 		{
+			this._carrito = new EntitySet<carrito>(new Action<carrito>(this.attach_carrito), new Action<carrito>(this.detach_carrito));
+			this._Reserva = new EntitySet<Reserva>(new Action<Reserva>(this.attach_Reserva), new Action<Reserva>(this.detach_Reserva));
+			this._tarjetas_cliente = new EntitySet<tarjetas_cliente>(new Action<tarjetas_cliente>(this.attach_tarjetas_cliente), new Action<tarjetas_cliente>(this.detach_tarjetas_cliente));
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descuento", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> descuento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int cedula
 		{
 			get
 			{
-				return this._descuento;
+				return this._cedula;
 			}
 			set
 			{
-				if ((this._descuento != value))
+				if ((this._cedula != value))
 				{
-					this._descuento = value;
+					this.OncedulaChanging(value);
+					this.SendPropertyChanging();
+					this._cedula = value;
+					this.SendPropertyChanged("cedula");
+					this.OncedulaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Fin", DbType="VarChar(50)")]
-		public string fecha_Fin
-		{
-			get
-			{
-				return this._fecha_Fin;
-			}
-			set
-			{
-				if ((this._fecha_Fin != value))
-				{
-					this._fecha_Fin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
 		public string Nombre
 		{
 			get
@@ -5081,83 +4859,208 @@ namespace AccesoDatos
 			{
 				if ((this._Nombre != value))
 				{
+					this.OnNombreChanging(value);
+					this.SendPropertyChanging();
 					this._Nombre = value;
+					this.SendPropertyChanged("Nombre");
+					this.OnNombreChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Hotel", DbType="Int NOT NULL")]
-		public int id_Hotel
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apellido", DbType="VarChar(50)")]
+		public string Apellido
 		{
 			get
 			{
-				return this._id_Hotel;
+				return this._Apellido;
 			}
 			set
 			{
-				if ((this._id_Hotel != value))
+				if ((this._Apellido != value))
 				{
-					this._id_Hotel = value;
+					this.OnApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._Apellido = value;
+					this.SendPropertyChanged("Apellido");
+					this.OnApellidoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_habitacion", DbType="Int")]
-		public System.Nullable<int> id_habitacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(60)")]
+		public string Email
 		{
 			get
 			{
-				return this._id_habitacion;
+				return this._Email;
 			}
 			set
 			{
-				if ((this._id_habitacion != value))
+				if ((this._Email != value))
 				{
-					this._id_habitacion = value;
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Oferta", DbType="Int NOT NULL")]
-		public int id_Oferta
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="Int")]
+		public System.Nullable<int> Telefono
 		{
 			get
 			{
-				return this._id_Oferta;
+				return this._Telefono;
 			}
 			set
 			{
-				if ((this._id_Oferta != value))
+				if ((this._Telefono != value))
 				{
-					this._id_Oferta = value;
+					this.OnTelefonoChanging(value);
+					this.SendPropertyChanging();
+					this._Telefono = value;
+					this.SendPropertyChanged("Telefono");
+					this.OnTelefonoChanged();
 				}
 			}
 		}
-	}
-	
-	public partial class ObtenerTiposHotelResult
-	{
 		
-		private string _nombre_Tipo;
-		
-		public ObtenerTiposHotelResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Tipo", DbType="VarChar(50)")]
-		public string nombre_Tipo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pass", DbType="VarChar(50)")]
+		public string pass
 		{
 			get
 			{
-				return this._nombre_Tipo;
+				return this._pass;
 			}
 			set
 			{
-				if ((this._nombre_Tipo != value))
+				if ((this._pass != value))
 				{
-					this._nombre_Tipo = value;
+					this.OnpassChanging(value);
+					this.SendPropertyChanging();
+					this._pass = value;
+					this.SendPropertyChanged("pass");
+					this.OnpassChanged();
 				}
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nCuenta", DbType="BigInt")]
+		public System.Nullable<long> nCuenta
+		{
+			get
+			{
+				return this._nCuenta;
+			}
+			set
+			{
+				if ((this._nCuenta != value))
+				{
+					this.OnnCuentaChanging(value);
+					this.SendPropertyChanging();
+					this._nCuenta = value;
+					this.SendPropertyChanged("nCuenta");
+					this.OnnCuentaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_carrito", Storage="_carrito", ThisKey="cedula", OtherKey="id_cliente")]
+		public EntitySet<carrito> carrito
+		{
+			get
+			{
+				return this._carrito;
+			}
+			set
+			{
+				this._carrito.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_Reserva", Storage="_Reserva", ThisKey="cedula", OtherKey="cedula")]
+		public EntitySet<Reserva> Reserva
+		{
+			get
+			{
+				return this._Reserva;
+			}
+			set
+			{
+				this._Reserva.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_tarjetas_cliente", Storage="_tarjetas_cliente", ThisKey="cedula", OtherKey="id_cliente")]
+		public EntitySet<tarjetas_cliente> tarjetas_cliente
+		{
+			get
+			{
+				return this._tarjetas_cliente;
+			}
+			set
+			{
+				this._tarjetas_cliente.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_carrito(carrito entity)
+		{
+			this.SendPropertyChanging();
+			entity.usuario = this;
+		}
+		
+		private void detach_carrito(carrito entity)
+		{
+			this.SendPropertyChanging();
+			entity.usuario = null;
+		}
+		
+		private void attach_Reserva(Reserva entity)
+		{
+			this.SendPropertyChanging();
+			entity.usuario = this;
+		}
+		
+		private void detach_Reserva(Reserva entity)
+		{
+			this.SendPropertyChanging();
+			entity.usuario = null;
+		}
+		
+		private void attach_tarjetas_cliente(tarjetas_cliente entity)
+		{
+			this.SendPropertyChanging();
+			entity.usuario = this;
+		}
+		
+		private void detach_tarjetas_cliente(tarjetas_cliente entity)
+		{
+			this.SendPropertyChanging();
+			entity.usuario = null;
 		}
 	}
 	
@@ -5403,117 +5306,79 @@ namespace AccesoDatos
 		}
 	}
 	
-	public partial class ObtenerHabitacionesPorHotelResult
+	public partial class LogeoUsuarioResult
 	{
 		
-		private int _id_habitacion;
+		private string _pass;
 		
-		private string _estado;
-		
-		private System.Nullable<int> _n_Personas;
-		
-		private System.Nullable<decimal> _precio;
-		
-		private string _nombre_Tiphabitacion;
-		
-		private string _img;
-		
-		public ObtenerHabitacionesPorHotelResult()
+		public LogeoUsuarioResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_habitacion", DbType="Int NOT NULL")]
-		public int id_habitacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pass", DbType="VarChar(50)")]
+		public string pass
 		{
 			get
 			{
-				return this._id_habitacion;
+				return this._pass;
 			}
 			set
 			{
-				if ((this._id_habitacion != value))
+				if ((this._pass != value))
 				{
-					this._id_habitacion = value;
+					this._pass = value;
 				}
 			}
 		}
+	}
+	
+	public partial class obtener_AtraccionResult
+	{
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="VarChar(50)")]
-		public string estado
+		private string _descripcion;
+		
+		public obtener_AtraccionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(50)")]
+		public string descripcion
 		{
 			get
 			{
-				return this._estado;
+				return this._descripcion;
 			}
 			set
 			{
-				if ((this._estado != value))
+				if ((this._descripcion != value))
 				{
-					this._estado = value;
+					this._descripcion = value;
 				}
 			}
 		}
+	}
+	
+	public partial class obtener_serviciosResult
+	{
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_n_Personas", DbType="Int")]
-		public System.Nullable<int> n_Personas
+		private string _descripcion;
+		
+		public obtener_serviciosResult()
 		{
-			get
-			{
-				return this._n_Personas;
-			}
-			set
-			{
-				if ((this._n_Personas != value))
-				{
-					this._n_Personas = value;
-				}
-			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio", DbType="Decimal(18,2)")]
-		public System.Nullable<decimal> precio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(50)")]
+		public string descripcion
 		{
 			get
 			{
-				return this._precio;
+				return this._descripcion;
 			}
 			set
 			{
-				if ((this._precio != value))
+				if ((this._descripcion != value))
 				{
-					this._precio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Tiphabitacion", DbType="VarChar(50)")]
-		public string nombre_Tiphabitacion
-		{
-			get
-			{
-				return this._nombre_Tiphabitacion;
-			}
-			set
-			{
-				if ((this._nombre_Tiphabitacion != value))
-				{
-					this._nombre_Tiphabitacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img", DbType="VarChar(MAX)")]
-		public string img
-		{
-			get
-			{
-				return this._img;
-			}
-			set
-			{
-				if ((this._img != value))
-				{
-					this._img = value;
+					this._descripcion = value;
 				}
 			}
 		}
@@ -5545,27 +5410,27 @@ namespace AccesoDatos
 		}
 	}
 	
-	public partial class obtenerServiciosHotelResult
+	public partial class obtenerCedulaResult
 	{
 		
-		private string _descripcion;
+		private int _cedula;
 		
-		public obtenerServiciosHotelResult()
+		public obtenerCedulaResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(50)")]
-		public string descripcion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula", DbType="Int NOT NULL")]
+		public int cedula
 		{
 			get
 			{
-				return this._descripcion;
+				return this._cedula;
 			}
 			set
 			{
-				if ((this._descripcion != value))
+				if ((this._cedula != value))
 				{
-					this._descripcion = value;
+					this._cedula = value;
 				}
 			}
 		}
@@ -5813,7 +5678,141 @@ namespace AccesoDatos
 		}
 	}
 	
-	public partial class ObtenerHabitacionesPorHotelResult1
+	public partial class obtenerdatosPersonaResult
+	{
+		
+		private int _cedula;
+		
+		private string _Nombre;
+		
+		private string _Apellido;
+		
+		private string _Email;
+		
+		private System.Nullable<int> _Telefono;
+		
+		private string _pass;
+		
+		private System.Nullable<long> _nCuenta;
+		
+		public obtenerdatosPersonaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula", DbType="Int NOT NULL")]
+		public int cedula
+		{
+			get
+			{
+				return this._cedula;
+			}
+			set
+			{
+				if ((this._cedula != value))
+				{
+					this._cedula = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apellido", DbType="VarChar(50)")]
+		public string Apellido
+		{
+			get
+			{
+				return this._Apellido;
+			}
+			set
+			{
+				if ((this._Apellido != value))
+				{
+					this._Apellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(60)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="Int")]
+		public System.Nullable<int> Telefono
+		{
+			get
+			{
+				return this._Telefono;
+			}
+			set
+			{
+				if ((this._Telefono != value))
+				{
+					this._Telefono = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pass", DbType="VarChar(50)")]
+		public string pass
+		{
+			get
+			{
+				return this._pass;
+			}
+			set
+			{
+				if ((this._pass != value))
+				{
+					this._pass = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nCuenta", DbType="BigInt")]
+		public System.Nullable<long> nCuenta
+		{
+			get
+			{
+				return this._nCuenta;
+			}
+			set
+			{
+				if ((this._nCuenta != value))
+				{
+					this._nCuenta = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ObtenerHabitacionesPorHotelResult
 	{
 		
 		private int _id_habitacion;
@@ -5824,11 +5823,15 @@ namespace AccesoDatos
 		
 		private System.Nullable<decimal> _precio;
 		
+		private string _nombre_Tiphabitacion;
+		
+		private string _img;
+		
 		private System.Nullable<long> _id_Tiphabitacion;
 		
 		private System.Nullable<int> _id_Hotel;
 		
-		public ObtenerHabitacionesPorHotelResult1()
+		public ObtenerHabitacionesPorHotelResult()
 		{
 		}
 		
@@ -5896,6 +5899,38 @@ namespace AccesoDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Tiphabitacion", DbType="VarChar(50)")]
+		public string nombre_Tiphabitacion
+		{
+			get
+			{
+				return this._nombre_Tiphabitacion;
+			}
+			set
+			{
+				if ((this._nombre_Tiphabitacion != value))
+				{
+					this._nombre_Tiphabitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img", DbType="VarChar(MAX)")]
+		public string img
+		{
+			get
+			{
+				return this._img;
+			}
+			set
+			{
+				if ((this._img != value))
+				{
+					this._img = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Tiphabitacion", DbType="BigInt")]
 		public System.Nullable<long> id_Tiphabitacion
 		{
@@ -5924,6 +5959,368 @@ namespace AccesoDatos
 				if ((this._id_Hotel != value))
 				{
 					this._id_Hotel = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerNumeroHabitacionesTipoResult
+	{
+		
+		private System.Nullable<long> _cantidadHabitacionTipo;
+		
+		public obtenerNumeroHabitacionesTipoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidadHabitacionTipo", DbType="BigInt")]
+		public System.Nullable<long> cantidadHabitacionTipo
+		{
+			get
+			{
+				return this._cantidadHabitacionTipo;
+			}
+			set
+			{
+				if ((this._cantidadHabitacionTipo != value))
+				{
+					this._cantidadHabitacionTipo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerOfertasResult
+	{
+		
+		private string _descuento;
+		
+		private string _Nombre;
+		
+		private int _id_Hotel;
+		
+		public obtenerOfertasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descuento", DbType="VarChar(50)")]
+		public string descuento
+		{
+			get
+			{
+				return this._descuento;
+			}
+			set
+			{
+				if ((this._descuento != value))
+				{
+					this._descuento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Hotel", DbType="Int NOT NULL")]
+		public int id_Hotel
+		{
+			get
+			{
+				return this._id_Hotel;
+			}
+			set
+			{
+				if ((this._id_Hotel != value))
+				{
+					this._id_Hotel = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerRegistroResult
+	{
+		
+		private string _Estado;
+		
+		private string _fecha_ingreso;
+		
+		private string _fecha_salida;
+		
+		private System.Nullable<decimal> _total;
+		
+		private int _id_habitacion;
+		
+		private string _nombre_Tiphabitacion;
+		
+		private string _Nombre;
+		
+		private string _direccion;
+		
+		private System.Nullable<int> _telefono;
+		
+		public obtenerRegistroResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50)")]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_ingreso", DbType="VarChar(50)")]
+		public string fecha_ingreso
+		{
+			get
+			{
+				return this._fecha_ingreso;
+			}
+			set
+			{
+				if ((this._fecha_ingreso != value))
+				{
+					this._fecha_ingreso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="VarChar(50)")]
+		public string fecha_salida
+		{
+			get
+			{
+				return this._fecha_salida;
+			}
+			set
+			{
+				if ((this._fecha_salida != value))
+				{
+					this._fecha_salida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> total
+		{
+			get
+			{
+				return this._total;
+			}
+			set
+			{
+				if ((this._total != value))
+				{
+					this._total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_habitacion", DbType="Int NOT NULL")]
+		public int id_habitacion
+		{
+			get
+			{
+				return this._id_habitacion;
+			}
+			set
+			{
+				if ((this._id_habitacion != value))
+				{
+					this._id_habitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Tiphabitacion", DbType="VarChar(50)")]
+		public string nombre_Tiphabitacion
+		{
+			get
+			{
+				return this._nombre_Tiphabitacion;
+			}
+			set
+			{
+				if ((this._nombre_Tiphabitacion != value))
+				{
+					this._nombre_Tiphabitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion", DbType="VarChar(100)")]
+		public string direccion
+		{
+			get
+			{
+				return this._direccion;
+			}
+			set
+			{
+				if ((this._direccion != value))
+				{
+					this._direccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefono", DbType="Int")]
+		public System.Nullable<int> telefono
+		{
+			get
+			{
+				return this._telefono;
+			}
+			set
+			{
+				if ((this._telefono != value))
+				{
+					this._telefono = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ObtenerServiciosHabitacionResult
+	{
+		
+		private string _descripcion;
+		
+		public ObtenerServiciosHabitacionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(50)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerServiciosHotelResult
+	{
+		
+		private string _descripcion;
+		
+		public obtenerServiciosHotelResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(50)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ObtenerTarjetasClienteResult
+	{
+		
+		private System.Nullable<long> _num_Tarjeta;
+		
+		public ObtenerTarjetasClienteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_num_Tarjeta", DbType="BigInt")]
+		public System.Nullable<long> num_Tarjeta
+		{
+			get
+			{
+				return this._num_Tarjeta;
+			}
+			set
+			{
+				if ((this._num_Tarjeta != value))
+				{
+					this._num_Tarjeta = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ObtenerTiposHotelResult
+	{
+		
+		private string _nombre_Tipo;
+		
+		public ObtenerTiposHotelResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Tipo", DbType="VarChar(50)")]
+		public string nombre_Tipo
+		{
+			get
+			{
+				return this._nombre_Tipo;
+			}
+			set
+			{
+				if ((this._nombre_Tipo != value))
+				{
+					this._nombre_Tipo = value;
 				}
 			}
 		}
