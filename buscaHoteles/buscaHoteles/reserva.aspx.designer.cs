@@ -10,7 +10,7 @@
 namespace buscaHoteles {
     
     
-    public partial class Hotel {
+    public partial class reserva {
         
         /// <summary>
         /// Control form1.
@@ -49,174 +49,255 @@ namespace buscaHoteles {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword Lpassword;
         
         /// <summary>
-        /// Control Button1.
+        /// Control MultiView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.MultiView MultiView1;
         
         /// <summary>
-        /// Control LBfechaIn.
+        /// Control View1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBfechaIn;
+        protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// Control LBfechaSal.
+        /// Control Labelah.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBfechaSal;
+        protected global::System.Web.UI.WebControls.Label Labelah;
         
         /// <summary>
-        /// Control LBNumNoche.
+        /// Control btnPagar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBNumNoche;
+        protected global::System.Web.UI.WebControls.Button btnPagar;
         
         /// <summary>
-        /// Control LBNumAdul.
+        /// Control Labelph.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBNumAdul;
+        protected global::System.Web.UI.WebControls.Label Labelph;
         
         /// <summary>
-        /// Control LBNumNi.
+        /// Control btnReserva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBNumNi;
+        protected global::System.Web.UI.WebControls.Button btnReserva;
         
         /// <summary>
-        /// Control htl.
+        /// Control View2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText htl;
+        protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// Control date1.
+        /// Control ced.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText date1;
+        protected global::System.Web.UI.WebControls.Label ced;
         
         /// <summary>
-        /// Control date2.
+        /// Control idhotel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText date2;
+        protected global::System.Web.UI.WebControls.Label idhotel;
         
         /// <summary>
-        /// Control SelectAdul.
+        /// Control idh.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect SelectAdul;
+        protected global::System.Web.UI.WebControls.Label idh;
         
         /// <summary>
-        /// Control SelectNi.
+        /// Control Labeltipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect SelectNi;
+        protected global::System.Web.UI.WebControls.Label Labeltipo;
         
         /// <summary>
-        /// Control btncheck.
+        /// Control fi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncheck;
+        protected global::System.Web.UI.WebControls.Label fi;
         
         /// <summary>
-        /// Control placeEncabezadoHotel.
+        /// Control fs.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder placeEncabezadoHotel;
+        protected global::System.Web.UI.WebControls.Label fs;
         
         /// <summary>
-        /// Control PlaceImagen.
+        /// Control labeltotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceImagen;
+        protected global::System.Web.UI.WebControls.Label labeltotal;
         
         /// <summary>
-        /// Control PlaceServicios.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceServicios;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control PlaceAtracciones.
+        /// Control DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceAtracciones;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// Control PlaceMapa.
+        /// Control usr.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceMapa;
+        protected global::System.Web.UI.WebControls.Button usr;
         
         /// <summary>
-        /// Control PlaceHabitacion.
+        /// Control View3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHabitacion;
+        protected global::System.Web.UI.WebControls.View View3;
         
         /// <summary>
-        /// Control PlaceId.
+        /// Control ced2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceId;
+        protected global::System.Web.UI.WebControls.Label ced2;
+        
+        /// <summary>
+        /// Control idhotel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label idhotel2;
+        
+        /// <summary>
+        /// Control idh2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label idh2;
+        
+        /// <summary>
+        /// Control Labeltipo2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Labeltipo2;
+        
+        /// <summary>
+        /// Control fi2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fi2;
+        
+        /// <summary>
+        /// Control fs2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fs2;
+        
+        /// <summary>
+        /// Control labeltotal2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labeltotal2;
+        
+        /// <summary>
+        /// Control Label9.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label9;
+        
+        /// <summary>
+        /// Control DropDownList2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        
+        /// <summary>
+        /// Control usr2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button usr2;
     }
 }

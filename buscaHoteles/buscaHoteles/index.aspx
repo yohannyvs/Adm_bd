@@ -56,7 +56,7 @@
               <li id="hm"><a href="#"><span class="icon-home"></span> Home</a></li>
               <li id="sn"><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li id="gl"><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-              <li  id="pr"><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion </a></li>
+              <li  id="pr"><asp:PlaceHolder ID="PlaceLg" runat="server"></asp:PlaceHolder></li>
               </ul>
                </div>
                </div>
@@ -89,8 +89,7 @@
                   <label for="usr"><span class="icon-keyboard"></span>Pass</label>
                   <input type="password" class="form-control" placeholder="Pass" id="Lpassword" runat="server">
                 </div>
-                
-                 <input type="button" value="login"> o <a href="registro.aspx">Registrarse</a>
+               <asp:Button ID="Button1" runat="server" Text="Login"  OnClick="login_Click"/>o <a href="registro.aspx">Registrarse</a>
               </div>
              
              </div>
@@ -200,38 +199,9 @@
                   </div>
               </center>
               <div class="ofertas">
-              <div class="col-xs-12 col-sm-6 col-md-3">
-           <div class="oferta"> 
-              <div class="ofimg"><img src="images/1da34920-3194-11e6-a413-d89d672bd508.jpg"></div>
-              <div class="pordes">Descuento del 50%</div>
-              <div class="nombrehotel">Hard Rock Hotel</div>
-              <div class="vermas"><a href="#">Vermas..</a></div>
-             </div>       
-              </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="oferta"> 
-              <div class="ofimg"><img src="images/1da34920-3194-11e6-a413-d89d672bd508.jpg"></div>
-              <div class="pordes">Descuento del 50%</div>
-              <div class="nombrehotel">Hard Rock Hotel</div>
-              <div class="vermas"><a href="#">Vermas..</a></div>
-             </div>      
-              </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="oferta"> 
-              <div class="ofimg"><img src="images/1da34920-3194-11e6-a413-d89d672bd508.jpg"></div>
-              <div class="pordes">Descuento del 50%</div>
-              <div class="nombrehotel">Hard Rock Hotel</div>
-              <div class="vermas"><a href="#">Vermas..</a></div>
-            </div>   
-              </div>
-               <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="oferta">   
-              <div class="ofimg"><img src="images/1da34920-3194-11e6-a413-d89d672bd508.jpg"></div>
-              <div class="pordes">Descuento del 50%</div>
-              <div class="nombrehotel">Hard Rock Hotel</div>
-              <div class="vermas"><a href="#">Vermas..</a></div>
-                </div>  
-                   </div> 
+                  <asp:PlaceHolder ID="PlaceOferta" runat="server"></asp:PlaceHolder>
+                
+                   
               </div>
               
               </div>
@@ -248,56 +218,56 @@
               <div class="row">
                   <div class="col-xs-12 col-sm-6 col-md-8">
                       <div class="reco1">
-                      <div id="destNom">San Jose</div>
+                      <div id="destNom"><a href="busqueda.aspx?ht=San Jose&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">San Jose</a></div>
                       </div>
                   
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-4">
                       <div class="reco2">
-                      <div id="destNom">Puntarenas</div>
+                      <div id="destNom"><a href="busqueda.aspx?ht=Puntarenas&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">Puntarenas</a></div>
                       </div>
                  
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-4">
                       <div class="reco2">
-                      <div id="destNom">Guanacaste</div>
+                      <div id="destNom"><a href="busqueda.aspx?ht=Guanacaste&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">Guanacaste</a></div>
                       </div>
                  
                   </div>
                
                   <div class="col-xs-12 col-sm-6 col-md-4">
                       <div class="reco2">
-                      <div id="destNom">Orlando Florida</div>
+                      <div id="destNom"><a href="busqueda.aspx?ht=Orlando Florida&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">Orlando Florida</a></div>
                       </div>
                  
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-4">
                       <div class="reco2">
-                      <div id="destNom">Jaco</div>
+                      <div id="destNom"><a href="busqueda.aspx?ht=Jaco&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">Jaco</a></div>
                       </div>
                  
                   </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
                  <div class="reco2">
-                    <div id="destNom">Tamarindo</div>
+                    <div id="destNom"><a href="busqueda.aspx?ht=Tamarindo&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">Tamarindo</a></div>
                     </div>
                   
                   </div>
                  <div class="col-xs-12 col-sm-6 col-md-8">
                       <div class="reco1">
-                     <div id="destNom">Cartago</div>
+                     <div id="destNom"><a href="busqueda.aspx?ht=Cartago&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">Cartago</a></div>
                      </div>
                   
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-4">
                       <div class="reco2">
-                      <div id="destNom">Panama</div>
+                      <div id="destNom"><a href="busqueda.aspx?ht=Panama&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">Panama</a></div>
                       </div>
                  
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-4">
                       <div class="reco2">
-                      <div id="destNom">Mexico</div>
+                      <div id="destNom"><a href="busqueda.aspx?ht=Panama&fi=14/02/2017&fs=15/02/2017&ad=1&ni=0&no=1">Mexico</a></div>
                       </div>
                  
                   </div>         

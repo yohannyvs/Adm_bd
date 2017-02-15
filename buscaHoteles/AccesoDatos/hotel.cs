@@ -113,6 +113,8 @@ namespace AccesoDatos
             set { img = value; }
         }
 
+        
+
         public hotel() { }
 
 
@@ -131,6 +133,7 @@ namespace AccesoDatos
             TipoPago = tp;
             Coordenadas = co;
             Imagen = foto;
+           
 
         }
 

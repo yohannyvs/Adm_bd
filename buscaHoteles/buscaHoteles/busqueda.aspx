@@ -56,11 +56,56 @@
               <li id="hm"><a href="#"><span class="icon-home"></span> Home</a></li>
               <li id="sn"><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li id="gl"><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-              <li  id="pr"><a href="#"><span class="icon-user"></span> Iniciar Sesion o Crear Cuenta</a></li>       
+               <li  id="pr"><asp:PlaceHolder ID="PlaceLg" runat="server"></asp:PlaceHolder></li>     
               </ul>
                </div>
                </div>
-           
+                <div class="container">
+  
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+         <div class="container">
+            <div class="cuadroLogin ">
+             
+            
+              <div class="form-group">
+                  <label for="usr"><span class="icon-user"></span>User</label>
+                  <input type="text" class="form-control" placeholder="User" id="LUsuario" runat="server">
+                </div>
+                <div class="form-group">
+                  <label for="usr"><span class="icon-keyboard"></span>Pass</label>
+                  <input type="password" class="form-control" placeholder="Pass" id="Lpassword" runat="server">
+                </div>
+                
+              <asp:Button ID="Button1" runat="server" Text="Login"  OnClick="login_Click"/> o <a href="registro.aspx">Registrarse</a>
+              </div>
+             
+             </div>
+            
+            </div>
+            
+            
+            
+            
+            
+        </div>
+     
+      </div>
+      
+    </div>
+  </div>
           
           </div>
          <div class="container-fluid">
@@ -184,7 +229,7 @@
               <li><a href="#"><span class="icon-home"></span> Home</a></li>
               <li><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-              <li ><a href="#"><span class="icon-user"></span> Iniciar Sesion o Crear Cuenta</a></li>       
+            <li ><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion o Crear Cuenta</a></li>       
               </ul>
                   </center>
               </div>

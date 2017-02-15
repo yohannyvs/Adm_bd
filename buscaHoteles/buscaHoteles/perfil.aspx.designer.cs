@@ -10,7 +10,7 @@
 namespace buscaHoteles {
     
     
-    public partial class Hotel {
+    public partial class perfil {
         
         /// <summary>
         /// Control form1.
@@ -49,174 +49,93 @@ namespace buscaHoteles {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword Lpassword;
         
         /// <summary>
-        /// Control Button1.
+        /// Control btnDatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.ImageButton btnDatos;
         
         /// <summary>
-        /// Control LBfechaIn.
+        /// Control btnTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBfechaIn;
+        protected global::System.Web.UI.WebControls.ImageButton btnTarjeta;
         
         /// <summary>
-        /// Control LBfechaSal.
+        /// Control btnHistorial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBfechaSal;
+        protected global::System.Web.UI.WebControls.ImageButton btnHistorial;
         
         /// <summary>
-        /// Control LBNumNoche.
+        /// Control MultiView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBNumNoche;
+        protected global::System.Web.UI.WebControls.MultiView MultiView1;
         
         /// <summary>
-        /// Control LBNumAdul.
+        /// Control View1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBNumAdul;
+        protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// Control LBNumNi.
+        /// Control PlaceDatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBNumNi;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceDatos;
         
         /// <summary>
-        /// Control htl.
+        /// Control View2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText htl;
+        protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// Control date1.
+        /// Control DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText date1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// Control date2.
+        /// Control View3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText date2;
+        protected global::System.Web.UI.WebControls.View View3;
         
         /// <summary>
-        /// Control SelectAdul.
+        /// Control PlaceRegisto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect SelectAdul;
-        
-        /// <summary>
-        /// Control SelectNi.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect SelectNi;
-        
-        /// <summary>
-        /// Control btncheck.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncheck;
-        
-        /// <summary>
-        /// Control placeEncabezadoHotel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder placeEncabezadoHotel;
-        
-        /// <summary>
-        /// Control PlaceImagen.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceImagen;
-        
-        /// <summary>
-        /// Control PlaceServicios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceServicios;
-        
-        /// <summary>
-        /// Control PlaceAtracciones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceAtracciones;
-        
-        /// <summary>
-        /// Control PlaceMapa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceMapa;
-        
-        /// <summary>
-        /// Control PlaceHabitacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHabitacion;
-        
-        /// <summary>
-        /// Control PlaceId.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceId;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceRegisto;
     }
 }

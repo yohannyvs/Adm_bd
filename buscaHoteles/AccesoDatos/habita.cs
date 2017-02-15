@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AccesoDatos
 {
-   public class habita
+    public class habita
     {
 
         private int idhabi;
@@ -53,9 +53,24 @@ namespace AccesoDatos
             set { img = value; }
         }
 
+        private Int64? idtipoh;
+        public Int64? id_TipoHabitacion
+        {
+            get { return idtipoh; }
+            set { idtipoh = value; }
+        }
+
+
+        private int? idh;
+        public int? IdHotel
+        {
+            get { return n_P; }
+            set { n_P = value; }
+        }
+    
         public habita() { }
 
-        public habita(int id,string esta,int? np,decimal? pre,string t, string image) {
+        public habita(int id,string esta,int? np,decimal? pre,string t, string image,Int64? idth,int? ih) {
 
             IdHabitacion = id;
             Estado = esta;
@@ -63,7 +78,8 @@ namespace AccesoDatos
             Precio = pre;
             Tipo = t;
             Imagen = image;
-
+            id_TipoHabitacion = idth;
+            IdHotel=ih;
         }
 
     }

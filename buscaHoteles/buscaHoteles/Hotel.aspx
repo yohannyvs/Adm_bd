@@ -25,7 +25,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-            <div class="container-fluid">
+       <div class="container-fluid">
           <div class="row">
           <div class="social">
                 <div class="btn-menu" id="btn-menu">
@@ -56,15 +56,60 @@
               <li id="hm"><a href="#"><span class="icon-home"></span> Home</a></li>
               <li id="sn"><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li id="gl"><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-              <li  id="pr"><a href="#"><span class="icon-user"></span> Iniciar Sesion</a></li>       
+              <li  id="pr"><asp:PlaceHolder ID="PlaceLg" runat="server"></asp:PlaceHolder></li> 
               </ul>
                </div>
                </div>
-           
+                <div class="container">
+  
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+         <div class="container">
+            <div class="cuadroLogin ">
+             
+            
+              <div class="form-group">
+                  <label for="usr"><span class="icon-user"></span>User</label>
+                  <input type="text" class="form-control" placeholder="User" id="LUsuario" runat="server">
+                </div>
+                <div class="form-group">
+                  <label for="usr"><span class="icon-keyboard"></span>Pass</label>
+                  <input type="password" class="form-control" placeholder="Pass" id="Lpassword" runat="server">
+                </div>
+                
+                 <asp:Button ID="Button1" runat="server" Text="Login"  OnClick="login_Click"/> o <a href="registro.aspx">Registrarse</a>
+              </div>
+             
+             </div>
+            
+            </div>
+            
+            
+            
+            
+            
+        </div>
+     
+      </div>
+      
+    </div>
+  </div>
           
           </div>
  
-              <div class="container">
+    <div class="container">
              
             
       <div class="row">
@@ -88,25 +133,25 @@
               <div class=" col-xs-12 col-sm-2 col-md-2">
               <div class="form-group">
                   <label for="usr">Destino lugar de interes</label>
-                  <input type="text" class="form-control" placeholder="Destino, hotel, lugar de interés o dirección" id="htl">
+                  <input type="text" class="form-control" placeholder="Destino, hotel, lugar de interés o dirección" id="htl" runat="server">
               </div>
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-2">
               <div class="form-group">
                   <label for="usr">Check-in</label>
-                  <input type="text" class="form-control " placeholder="Check-in" id="datepicker">
+                  <input type="text" class="form-control " placeholder="Check-in" id="date1" runat="server">
               </div>
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-2">
               <div class="form-group">
                 <label for="usr">Check-out</label>
-                  <input type="text" class="form-control" placeholder="Check-out" id="datepicker2">
+                  <input type="text" class="form-control" placeholder="Check-out"  id="date2" runat="server">
               </div>
               </div>
               <div class=" col-xs-12 col-sm-12 col-md-2">
              <div class="form-group">
                   <label for="usr">Adultos:</label>
-              <select class="form-control" id="usr">
+              <select class="form-control" id="SelectAdul" runat="server">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -117,7 +162,7 @@
               <div class=" col-xs-12 col-sm-12 col-md-2">
                   <div class="form-group">
                        <label for="usr">Niños</label>
-              <select class="form-control" id="usr">
+              <select class="form-control" id="SelectNi" runat="server">
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -129,7 +174,7 @@
               <div class="col-xs-12 col-sm-12 col-md-2">
                <div class="bt">   
                <div class="form-group">
-                  <input type="button" id="btncheck" class="form-control input-lg" value="Buscar">
+                  <asp:Button ID="btncheck" class="form-control input-lg" runat="server" Text="Buscar" OnClick="btncheck_Click" />
                   </div>
                    </div>
                </div>
@@ -187,7 +232,7 @@
                       </div>
                   <ul><li><label class="preA">¢ 264.635</label> <label class="preOF">¢ 238.172</label> </li></ul>
                   <ul><li>Precio por Noche</li></ul>
-                  <ul><li><input type="button" id="reserHotel" value="Reserva Ahora"></li></ul>
+                  <ul><li id="reserHotel"><a  href="#habita">Reserva Ahora</a></li></ul>
                   <ul><li></li></ul>
                   </div>
                   </div>
@@ -207,10 +252,10 @@
              
           
           <div class="row">
-              <div class="hotelHabitaciones">
+              <div class="hotelHabitaciones" id="habita" >
                   <h1>Habitaciones</h1>
-          <div class="col-xs-12 col-sm-12 col-md-12">
-              <table class="table table-condensed">
+         
+    <table class="table table-condensed">
     <thead>
       <tr>
         <th>Tipo Habitacion</th>
@@ -226,10 +271,15 @@
               
               
               </div>
+          
           </div>
-          </div>
+          <asp:PlaceHolder ID="PlaceId" runat="server"></asp:PlaceHolder>    
            
-          <div class="row">
+        
+
+         
+       </div>
+            <div class="row">
           <div class="pie">
               <h1>Busca Hoteles</h1>
               <center>
@@ -237,12 +287,11 @@
               <li><a href="#"><span class="icon-home"></span> Home</a></li>
               <li><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
-              <li ><a href="#"><span class="icon-user"></span> Iniciar Sesion o Crear Cuenta</a></li>       
+            <li ><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion o Crear Cuenta</a></li>         
               </ul>
                   </center>
               </div>
           </div>
-       </div>
       </div>
     </form>
      <!-- Librería jQuery requerida por los plugins de JavaScript -->
