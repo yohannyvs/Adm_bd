@@ -144,10 +144,13 @@
                    <li><div class="form-group">
                   <label for="usr">Categoria</label><br/>
                        <div class="checkbox">
-                       <label><input type="checkbox" value=""><span class="icon-star-full"></span> 1</label>
-                       <label><input type="checkbox" value=""> <span class="icon-star-full"></span> 2</label>
-                       <label><input type="checkbox" value="" > <span class="icon-star-full"></span> 3</label>
-                       <label><input type="checkbox" value="" > <span class="icon-star-full"></span> 4</label>
+                     <asp:CheckBoxList ID="CheckBoxEstrellas" runat="server">
+                         <asp:ListItem Value=" 1">★ 1</asp:ListItem>
+                         <asp:ListItem Value=" 2">★ 2</asp:ListItem>
+                         <asp:ListItem Value=" 3">★ 3</asp:ListItem>
+                         <asp:ListItem Value=" 4">★ 4</asp:ListItem>
+                     </asp:CheckBoxList>
+                      
                         </div>
                  
                   </div></li>
@@ -155,30 +158,35 @@
                    <div class="form-group">
                   <label for="usr">Zona</label>
                  <div class="checkbox">
-                          <label><input type="checkbox" value="">Jaco</label>
+                     <asp:CheckBoxList ID="CheckBoxZona" runat="server">
+
+
+                     </asp:CheckBoxList>
                         </div>
               </div>
                   </li>
                    <li>
              <div class="form-group">
                   <label for="usr">Tipo de Hospedaje</label>
-                 <asp:PlaceHolder ID="TipoHospedaje" runat="server"></asp:PlaceHolder>
+                <asp:CheckBoxList ID="CheckBoxTipoHospedaje" runat="server"></asp:CheckBoxList>
                   </li>
                    <li>
                  <div class="form-group">
                  <label for="usr">Servicios</label>
-                     <asp:PlaceHolder ID="PlaceServicios" runat="server"></asp:PlaceHolder>
+                     <asp:CheckBoxList ID="CheckBoxServicios" runat="server"></asp:CheckBoxList>
+                     
                  
               </div>
                   </li>
                    <li>
                  <div class="form-group">
                  <label for="usr">Atracciones</label>
-                  <asp:PlaceHolder ID="PlaceAtraccion" runat="server"></asp:PlaceHolder>
+                 
+                     <asp:CheckBoxList ID="CheckBoxAtraccion" runat="server"></asp:CheckBoxList>
               </div>
                   </li>
                   <li>
-                  <input type="button" id="buscar"  value="Filtrar">
+                 <asp:Button ID="buscar" runat="server" Text="Filtrar" OnClick="buscar_Click" />
                   </li>
               </ul>
               </div>

@@ -58,31 +58,58 @@ namespace buscaHoteles {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Control TipoHospedaje.
+        /// Control CheckBoxEstrellas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder TipoHospedaje;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxEstrellas;
         
         /// <summary>
-        /// Control PlaceServicios.
+        /// Control CheckBoxZona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceServicios;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxZona;
         
         /// <summary>
-        /// Control PlaceAtraccion.
+        /// Control CheckBoxTipoHospedaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceAtraccion;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxTipoHospedaje;
+        
+        /// <summary>
+        /// Control CheckBoxServicios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxServicios;
+        
+        /// <summary>
+        /// Control CheckBoxAtraccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxAtraccion;
+        
+        /// <summary>
+        /// Control buscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buscar;
         
         /// <summary>
         /// Control LbHotel.

@@ -26,7 +26,8 @@ namespace AccesoDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Pedro-Pc;Initial Catalog=Hoteles;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=progradb.database.windows.net;Initial Catalog=Hoteles;User ID=progra;" +
+            "Password=Bases2017")]
         public string HotelesConnectionString {
             get {
                 return ((string)(this["HotelesConnectionString"]));

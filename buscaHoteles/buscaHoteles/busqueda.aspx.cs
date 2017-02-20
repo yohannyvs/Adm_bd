@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
 using System.Text;
-
+using System.Collections;
 namespace buscaHoteles
 {
     public partial class busqueda : System.Web.UI.Page
@@ -14,10 +14,12 @@ namespace buscaHoteles
         Metodos metodo = new Metodos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            try {
+
+
+            try
+            {
                 string nombre = (string)Session["user"];
-                
+
                 StringBuilder htm9 = new StringBuilder();
                 if (nombre == null)
                 {
@@ -67,17 +69,16 @@ namespace buscaHoteles
 
                     foreach (var tipohotel in th)
                     {
-                        html.Append("<div class='checkbox'>");
-                        html.Append("<label><input type ='checkbox' value='" + tipohotel.Descripcion + "'>" + tipohotel.Descripcion + "</label>");
-                        html.Append("</div>");
+                        ListItem item = new ListItem();
 
-
-
+                        item.Text = tipohotel.Descripcion;
+                        item.Value = tipohotel.Descripcion;
+                        CheckBoxTipoHospedaje.Items.Add(item);
 
                     }
 
-                    //Append the HTML string to Placeholder.
-                    TipoHospedaje.Controls.Add(new Literal { Text = html.ToString() });
+
+
 
                     //Genera los check con los datos de los Servicios  almacenados en la base de datos
 
@@ -86,17 +87,17 @@ namespace buscaHoteles
                     var servi = metodo.ObtenerServicios();
                     foreach (var servicio in servi)
                     {
-                        html2.Append("<div class='checkbox'>");
-                        html2.Append("<label><input type ='checkbox' value='" + servicio.Descripcion + "'>" + servicio.Descripcion + "</label>");
-                        html2.Append("</div>");
+                        ListItem item = new ListItem();
 
+                        item.Text = servicio.Descripcion;
+                        item.Value = servicio.Descripcion;
+                        CheckBoxServicios.Items.Add(item);
 
 
 
                     }
 
-                    //Append the HTML string to Placeholder.
-                    PlaceServicios.Controls.Add(new Literal { Text = html2.ToString() });
+
 
                     //Genera los check con los datos de las Atracciones  almacenados en la base de datos
 
@@ -105,17 +106,17 @@ namespace buscaHoteles
                     var atra = metodo.ObtenerAtracciones();
                     foreach (var Atraccion in atra)
                     {
-                        html3.Append("<div class='checkbox'>");
-                        html3.Append("<label><input type ='checkbox' value='" + Atraccion.Descripcion + "'>" + Atraccion.Descripcion + "</label>");
-                        html3.Append("</div>");
 
+                        ListItem item = new ListItem();
 
+                        item.Text = Atraccion.Descripcion;
+                        item.Value = Atraccion.Descripcion;
+                        CheckBoxAtraccion.Items.Add(item);
 
 
                     }
 
-                    //Append the HTML string to Placeholder.
-                    PlaceAtraccion.Controls.Add(new Literal { Text = html3.ToString() });
+
 
 
 
@@ -167,10 +168,10 @@ namespace buscaHoteles
 
             }
             catch (Exception ex) { }
-           
 
 
-}
+
+        }
 
         protected void login_Click(object sender, EventArgs e)
         {
@@ -201,6 +202,87 @@ namespace buscaHoteles
             }
         }
 
+        protected void buscar_Click(object sender, EventArgs e)
+        { /*obtener estrellas de hotel*/
+            ArrayList estrella = new ArrayList();
+            foreach (ListItem li in this.CheckBoxEstrellas.Items)
+            {
 
+                if (li.Selected)
+                {
+                    estrella.Add(li.Text + ",");
+                }
+
+            }
+
+
+
+
+            /*obtener tipos de hotel*/
+            ArrayList thotel = new ArrayList();
+            foreach (ListItem li in this.CheckBoxTipoHospedaje.Items)
+            {
+
+                if (li.Selected)
+                {
+                    thotel.Add(li.Text + ",");
+                }
+
+            }
+
+            /*obtener Atracciones de hotel*/
+            ArrayList Atracciones = new ArrayList();
+            foreach (ListItem li in this.CheckBoxAtraccion.Items)
+            {
+
+                if (li.Selected)
+                {
+                    Atracciones.Add(li.Text + ",");
+                }
+
+            }
+
+            /*obtener Servicios de hotel*/
+            ArrayList Servicios = new ArrayList();
+            foreach (ListItem li in this.CheckBoxServicios.Items)
+            {
+
+                if (li.Selected)
+                {
+                    Servicios.Add(li.Text + ",");
+                }
+
+            }
+
+            string es = "";
+            for (int i = 0; i < estrella.Count; i++)
+            {
+                es = es + estrella[i];
+            }
+
+
+
+            string th = "";
+            for (int i = 0; i < thotel.Count; i++)
+            {
+                th = th + thotel[i];
+            }
+
+            string a = "";
+            for (int i = 0; i < Atracciones.Count; i++)
+            {
+                a = a + Atracciones[i];
+            }
+
+            string s = "";
+            for (int i = 0; i < Servicios.Count; i++)
+            {
+                s = s + Servicios[i];
+            }
+
+            String seleccionados;
+            seleccionados = es + th + a + s;
+            Response.Write("<script language=javascript>if(confirm('" + seleccionados + "')==true){ location.href='busqueda.aspx';}else { location.href='busqueda.aspx';}</script>");
+        }
     }
 }
