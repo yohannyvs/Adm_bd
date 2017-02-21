@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos;
+using System.Collections;
 namespace Negocio
 {
-   public class Metodos
+    public class Metodos
     {
         hoteldbaDataContext Datos = new hoteldbaDataContext();
 
         // metodo para logear
-        public Boolean login(string user,string pass)
+        public Boolean login(string user, string pass)
         {
 
-            String contra=null;
+            String contra = null;
 
             /*Tipo de dato que se crea en tiempo de ejecución*/
             var resultado = Datos.LogeoUsuario(user);
@@ -42,42 +43,49 @@ namespace Negocio
         }
 
         //metodo de registro
-        public void RegistrarCliente(int cedula,String nombre,String Apellido,String email,int tel,String pass,Int64 numcuenta,String TipoTar) {
-            try {
+        public void RegistrarCliente(int cedula, String nombre, String Apellido, String email, int tel, String pass, Int64 numcuenta, String TipoTar)
+        {
+            try
+            {
                 Datos.registrarCliente(cedula, nombre, Apellido, email, tel, pass);
-            } catch (Exception e) {
-                
-   
+            }
+            catch (Exception e)
+            {
+
+
             }
 
-            try {
-                Datos.RegistrarTargeta(numcuenta,TipoTar,cedula);
+            try
+            {
+                Datos.RegistrarTargeta(numcuenta, TipoTar, cedula);
 
-            } catch (Exception ex) { }
-           
-            
+            }
+            catch (Exception ex) { }
+
+
 
         }
 
-        
-        // metodo para obtener los servicios
-        public List<ServiAtrac> ObtenerServicios() {
-            List<ServiAtrac> lista = new List<ServiAtrac>();
-           
-                /*Tipo de dato que se crea en tiempo de ejecución*/
-                var resultado = Datos.obtener_servicios();
 
-                /*recorrer el resultado*/
-                foreach (var Descripcion in resultado)
-                {
-                    lista.Add(
-                        new ServiAtrac(
-                           Descripcion.descripcion
-                        )
-                   );
-                }
-                return lista;
-            
+        // metodo para obtener los servicios
+        public List<ServiAtrac> ObtenerServicios()
+        {
+            List<ServiAtrac> lista = new List<ServiAtrac>();
+
+            /*Tipo de dato que se crea en tiempo de ejecución*/
+            var resultado = Datos.obtener_servicios();
+
+            /*recorrer el resultado*/
+            foreach (var Descripcion in resultado)
+            {
+                lista.Add(
+                    new ServiAtrac(
+                       Descripcion.descripcion
+                    )
+               );
+            }
+            return lista;
+
 
         }
 
@@ -167,7 +175,7 @@ namespace Negocio
         }
 
 
-        //Metodo obtener Buscar Hotel
+        //Metodo obtener datos Hotel
         public List<hotel> ObtenerDatosHotel(int Busca)
         {
             List<hotel> lista = new List<hotel>();
@@ -289,7 +297,7 @@ namespace Negocio
 
 
             /*Tipo de dato que se crea en tiempo de ejecución*/
-            var resultado = Datos.obtenerNumeroHabitacionesTipo(idHotel,idTipo);
+            var resultado = Datos.obtenerNumeroHabitacionesTipo(idHotel, idTipo);
 
             /*recorrer el resultado*/
             foreach (var Descripcion in resultado)
@@ -356,7 +364,7 @@ namespace Negocio
         //Metodo obtener tarjetas clientes
         public String ObtenerCedulaCliente(string email)
         {
-            String cedula=null;
+            String cedula = null;
 
 
             /*Tipo de dato que se crea en tiempo de ejecución*/
@@ -374,9 +382,9 @@ namespace Negocio
 
 
         //Metodo Registrar
-        public void registrarReserva(int cedula,Int64 idtipo,Int64 idhabitacion,Int64 idhotel,string fechaIngreso,string fechaSalida,decimal total, string estado)
+        public void registrarReserva(int cedula, Int64 idtipo, Int64 idhabitacion, Int64 idhotel, string fechaIngreso, string fechaSalida, decimal total, string estado)
         {
-            Datos.reservar(cedula,idhabitacion,idtipo,idhotel,fechaIngreso,fechaSalida,total,estado);
+            Datos.reservar(cedula, idhabitacion, idtipo, idhotel, fechaIngreso, fechaSalida, total, estado);
 
 
 
@@ -452,6 +460,10 @@ namespace Negocio
             {
                 lista.Add(
                     new registro(
+                       r.id_Hotel,
+                       r.id_Reserva,
+                       r.id_carrito,
+                       r.id_Tiphabitacion,
                        r.Nombre,
                        r.id_habitacion,
                        r.nombre_Tiphabitacion,
@@ -465,6 +477,14 @@ namespace Negocio
                );
             }
             return lista;
+
+
+        }
+
+        public void cancelarReserva(Int64 idtipo, Int64 idhotel, Int64 idCarrito, Int64 idreserva)
+        {
+
+            Datos.cancelarReserva(idhotel, idreserva, idCarrito, idtipo);
 
 
         }

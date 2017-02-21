@@ -9,10 +9,39 @@ namespace AccesoDatos
    public class registro
     {
 
-      
-                       
 
 
+        private int? idhotel;
+
+        public int? id_Hotel
+        {
+            get { return idhotel; }
+            set { idhotel = value; }
+        }
+
+        private Int64? idRes;
+
+        public Int64? id_Reserva
+        {
+            get { return idRes; }
+            set { idRes = value; }
+        }
+
+
+        private Int64? idC;
+
+        public Int64? id_Carrito
+        {
+            get { return idC; }
+            set { idC = value; }
+        }
+
+        private Int64? idt;
+        public Int64? id_tipo
+        {
+            get { return idt; }
+            set { idt = value; }
+        }
 
         private string ho;
 
@@ -30,8 +59,8 @@ namespace AccesoDatos
             set { idh = value; }
         }
 
-        
-       private string tipoH;
+
+        private string tipoH;
 
         public string tipo_Habitacion
         {
@@ -93,8 +122,12 @@ namespace AccesoDatos
 
         public registro() { }
 
-        public registro(string n,int?ih,string t, string i,string s,string d,int? te,decimal? to,string e) {
-
+        public registro(int? idh, Int64? idr, Int64? idc, Int64? idt, string n, int? ih, string t, string i, string s, string d, int? te, decimal? to, string e)
+        {
+            id_Hotel = idh;
+            id_Reserva = idr;
+            id_tipo = idt;
+            id_Carrito = idc;
             nom_Hotel = n;
             id_habitacion = ih;
             tipo_Habitacion = t;

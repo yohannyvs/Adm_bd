@@ -300,6 +300,13 @@ namespace AccesoDatos
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reservar")]
+		public int reservar([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_habitacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_hotel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fechaIngreso, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fechaSalida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Decimal(18,0)")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(1)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, id_habitacion, id_tipo, id_hotel, fechaIngreso, fechaSalida, total, estado);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarCatalogo")]
 		public int actualizarCatalogo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_catalogo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_categoria)
 		{
@@ -382,6 +389,19 @@ namespace AccesoDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dato);
 			return ((ISingleResult<buscarHotelResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarHotel_Categoria")]
+		public void buscarHotel_Categoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string list)
+		{
+			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), list);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cancelarReserva")]
+		public int cancelarReserva([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_hotel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_reserva, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_Carrito, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_tipo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_hotel, id_reserva, id_Carrito, id_tipo);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminar_Administrador")]
@@ -490,10 +510,9 @@ namespace AccesoDatos
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertar_Carrito")]
-		public int insertar_Carrito([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_cliente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_Reserva, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(50)")] string estado)
+		public void insertar_Carrito([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_cliente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_Reserva, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(50)")] string estado)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_cliente, id_Reserva, estado);
-			return ((int)(result.ReturnValue));
+			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_cliente, id_Reserva, estado);
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertar_Catalago")]
@@ -525,9 +544,9 @@ namespace AccesoDatos
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertar_Hotel")]
-		public int insertar_Hotel([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string reseña, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_localidad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Categoria", DbType="BigInt")] System.Nullable<long> categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string evaluacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="N_habitaciones", DbType="BigInt")] System.Nullable<long> n_habitaciones, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> tipo_pago, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Coordenadas", DbType="VarChar(250)")] string coordenadas)
+		public int insertar_Hotel([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string reseña, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_localidad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Categoria", DbType="BigInt")] System.Nullable<long> categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string evaluacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="N_habitaciones", DbType="BigInt")] System.Nullable<long> n_habitaciones, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> tipo_pago, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Coordenadas", DbType="VarChar(250)")] string coordenadas, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string imagen)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, id_tipo, reseña, telefono, direccion, id_localidad, categoria, evaluacion, n_habitaciones, tipo_pago, coordenadas);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, id_tipo, reseña, telefono, direccion, id_localidad, categoria, evaluacion, n_habitaciones, tipo_pago, coordenadas, imagen);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -745,13 +764,6 @@ namespace AccesoDatos
 		public int RegistrarTargeta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> num, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), num, tipo, cedula);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reservar")]
-		public int reservar([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_habitacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> id_hotel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fechaIngreso, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fechaSalida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Decimal(18,0)")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(1)")] string estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, id_habitacion, id_tipo, id_hotel, fechaIngreso, fechaSalida, total, estado);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -6055,6 +6067,14 @@ namespace AccesoDatos
 	public partial class obtenerRegistroResult
 	{
 		
+		private int _id_Hotel;
+		
+		private int _id_Reserva;
+		
+		private long _id_Tiphabitacion;
+		
+		private long _id_carrito;
+		
 		private string _Estado;
 		
 		private string _fecha_ingreso;
@@ -6075,6 +6095,70 @@ namespace AccesoDatos
 		
 		public obtenerRegistroResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Hotel", DbType="Int NOT NULL")]
+		public int id_Hotel
+		{
+			get
+			{
+				return this._id_Hotel;
+			}
+			set
+			{
+				if ((this._id_Hotel != value))
+				{
+					this._id_Hotel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Reserva", DbType="Int NOT NULL")]
+		public int id_Reserva
+		{
+			get
+			{
+				return this._id_Reserva;
+			}
+			set
+			{
+				if ((this._id_Reserva != value))
+				{
+					this._id_Reserva = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Tiphabitacion", DbType="BigInt NOT NULL")]
+		public long id_Tiphabitacion
+		{
+			get
+			{
+				return this._id_Tiphabitacion;
+			}
+			set
+			{
+				if ((this._id_Tiphabitacion != value))
+				{
+					this._id_Tiphabitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_carrito", DbType="BigInt NOT NULL")]
+		public long id_carrito
+		{
+			get
+			{
+				return this._id_carrito;
+			}
+			set
+			{
+				if ((this._id_carrito != value))
+				{
+					this._id_carrito = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50)")]

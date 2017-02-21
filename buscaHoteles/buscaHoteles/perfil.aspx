@@ -169,7 +169,7 @@
               <h1>Busca Hoteles</h1>
               <center>
                <ul>
-              <li><a href="#"><span class="icon-home"></span> Home</a></li>
+              <li><a href="index.aspx"><span class="icon-home"></span> Home</a></li>
               <li><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
             <li ><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion o Crear Cuenta</a></li>       
@@ -181,5 +181,13 @@
     </div>
     </div>
     </form>
+    <!-- Librería jQuery requerida por los plugins de JavaScript -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Todos los plugins JavaScript de Bootstrap (también puedes
+         incluir archivos JavaScript individuales de los únicos
+         plugins que utilices) -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

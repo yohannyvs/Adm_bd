@@ -66,9 +66,14 @@ namespace buscaHoteles
             DateTime newDate = DateTime.Parse(fechasal);
             TimeSpan ts = newDate - oldDate;
             String Dias = ts.Days.ToString();
-
-            
-            Response.Redirect("busqueda.aspx?ht="+hotel+"&fi="+fechain+"&fs="+fechasal+"&ad="+adul+"&ni="+nin+"&no="+Dias);
+            if (oldDate > newDate)
+            {
+                Response.Write("<script language=javascript>if(confirm('No Puede Seleccionar una Fecha de Salida Menor que la fecha Actual')==true){ location.href='index.aspx';}else { location.href='index.aspx';}</script>");
+            }
+            else
+            {
+                Response.Redirect("busqueda.aspx?ht=" + hotel + "&fi=" + fechain + "&fs=" + fechasal + "&ad=" + adul + "&ni=" + nin + "&no=" + Dias);
+            }
         }
 
         protected void login_Click(object sender, EventArgs e)

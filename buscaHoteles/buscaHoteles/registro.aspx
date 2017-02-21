@@ -53,7 +53,7 @@
          <div class="col-xs-10 col-sm-10 col-md-9 ">
              <div class="menu" id="menu">
               <ul>
-              <li id="hm"><a href="#"><span class="icon-home"></span> Home</a></li>
+              <li id="hm"><a href="index.aspx"><span class="icon-home"></span> Home</a></li>
               <li id="sn"><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li id="gl"><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
                   <li  id="pr"><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion o Crear Cuenta</a></li>
@@ -180,7 +180,7 @@
               <h1>Busca Hoteles</h1>
               <center>
                <ul>
-              <li><a href="#"><span class="icon-home"></span> Home</a></li>
+              <li><a href="index.aspx"><span class="icon-home"></span> Home</a></li>
               <li><a href="#"><span class="icon-newspaper"></span> Ofertas</a></li>
               <li><a href="#"><span class="icon-file-empty"></span> Ayuda</a></li>
               <li ><a data-toggle="modal" data-target="#myModal"><span class="icon-user" ></span> Iniciar Sesion o Crear Cuenta</a></li>       

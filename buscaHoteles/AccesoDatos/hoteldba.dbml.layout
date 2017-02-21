@@ -163,7 +163,7 @@
         <classShapeMoniker Id="ac43f74f-8ebe-44f9-a5cc-b6eb09d1ac81" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.75 : 11.0304996744792); (12.75 : 12.0392976888021); (14.5 : 12.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(12.75 : 11.0304996744792); (12.75 : 12.0392976888021); (14.0416666666667 : 12.0392976888021 : JumpStart); (14.2083333333333 : 12.0392976888021 : JumpEnd); (14.5 : 12.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/hoteldbaDataContext/habitacion/habitacion_ofertas" />
       <nodes>
         <classShapeMoniker Id="305c40a2-9b8a-48af-95f2-86c2b1385d1f" />
@@ -219,7 +219,7 @@
         <classShapeMoniker Id="397b4b88-d377-4b79-8849-61662628900f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.9776060208834 : 14.25); (11.375 : 13.8526060208834); (11.375 : 7.32097245898438); (11.4479166666667 : 7.32097245898438 : JumpStart); (11.6145833333333 : 7.32097245898438 : JumpEnd); (11.75 : 7.32097245898438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(10.9776060208834 : 14.25); (11.375 : 13.8526060208834); (11.375 : 7.32097245898438); (11.75 : 7.32097245898438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/hoteldbaDataContext/Catalogo/Catalogo_Servicios_Hotel" />
       <nodes>
         <classShapeMoniker Id="c77cb7b9-5fa6-4c6d-b00e-5749b5d058e1" />

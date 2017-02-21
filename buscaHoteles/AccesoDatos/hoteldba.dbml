@@ -218,6 +218,17 @@
     <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.reservar" Method="reservar">
+    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_habitacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_tipo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_hotel" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="fechaIngreso" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fechaSalida" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Total" Parameter="total" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.actualizarCatalogo" Method="actualizarCatalogo">
     <Parameter Name="id_catalogo" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
@@ -320,6 +331,16 @@
       <Column Name="Estrella" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.buscarHotel_Categoria" Method="buscarHotel_Categoria">
+    <Parameter Name="list" Type="System.String" DbType="VarChar(MAX)" />
+  </Function>
+  <Function Name="dbo.cancelarReserva" Method="cancelarReserva">
+    <Parameter Name="id_hotel" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_reserva" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_Carrito" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_tipo" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.eliminar_Administrador" Method="eliminar_Administrador">
     <Parameter Name="cedula_Adm" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -387,7 +408,6 @@
     <Parameter Name="id_cliente" Type="System.Int32" DbType="Int" />
     <Parameter Name="id_Reserva" Type="System.Int32" DbType="Int" />
     <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.insertar_Catalago" Method="insertar_Catalago">
     <Parameter Name="descripcion" Type="System.String" DbType="VarChar(50)" />
@@ -423,6 +443,7 @@
     <Parameter Name="N_habitaciones" Parameter="n_habitaciones" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="tipo_pago" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="Coordenadas" Parameter="coordenadas" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="imagen" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.insertar_Localidad" Method="insertar_Localidad">
@@ -590,6 +611,10 @@
   <Function Name="dbo.obtenerRegistro" Method="obtenerRegistro">
     <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
     <ElementType Name="obtenerRegistroResult">
+      <Column Name="id_Hotel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_Reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_Tiphabitacion" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="id_carrito" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="Estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="fecha_ingreso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="fecha_salida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
@@ -637,17 +662,6 @@
     <Parameter Name="num" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="tipo" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.reservar" Method="reservar">
-    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
-    <Parameter Name="id_habitacion" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="id_tipo" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="id_hotel" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="fechaIngreso" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="fechaSalida" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Total" Parameter="total" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
